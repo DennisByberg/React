@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+/* font-family: 'Bebas Neue', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  box-shadow: 0 0 20px black;
+  border-radius: 20px;
+  margin: 1rem 3rem auto 3rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: auto;
+  width: 100%;
+  background-color: rgb(60, 60, 60);
+}
+
+/* INSIDE MAIN */
+#input-and-buttons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+#buttons-section {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+main input {
+  color: rgb(223, 223, 223);
+  background: transparent;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  outline: none;
+  text-align: center;
+  font-weight: normal;
+  font-style: italic;
+}
+
+main button {
+  background: linear-gradient(45deg, rgb(232, 139, 255), rgb(180, 180, 180));
+  width: 10rem;
+  border: none;
+  box-shadow: 0 0 5px black;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border-radius: 50px;
+}
+
+main button:hover {
+  box-shadow: 0 0 8px black;
+  cursor: pointer;
+  background: linear-gradient(45deg, rgb(212, 119, 235), rgb(160, 160, 160));
+}
+
+main input::placeholder {
+  font-size: 1rem;
+  text-align: center;
+}
+
+main img {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.716);
+  max-height: 100px;
+  border-radius: 20px;
+  border: none;
+}
+main h2 {
+  margin: 2rem 0 0 0;
+}
+/* ━━━━━━━━━━ */
+
+header,
+footer {
+  font-size: 25px;
+  color: rgb(255, 163, 240);
+  text-shadow: 0 0 10px black;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", cursive;
+}
+
+header {
+  height: 6rem;
+  background: linear-gradient(to bottom, rgb(30, 30, 30), rgb(60, 60, 60));
+}
+
+footer {
+  height: 4rem;
+  background: linear-gradient(to top, rgb(30, 30, 30), rgb(60, 60, 60));
+}
+
+@media screen and (max-width: 600px) {
+  #buttons-section {
+    flex-direction: column;
+  }
+}
