@@ -39,6 +39,24 @@ async function saveToDatabase(todoItem) {
   }
 }
 
+async function removeFromDatabase(todoId) {
+  try {
+    await deleteDoc(doc(db, "todos", todoId));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function addClickEvent() {
+  const todoElms = document.querySelectorAll("li");
+  todoElms.forEach((todoElem) => {
+    todoElem.addEventListener("click", (event) => {
+      const todoId = event.target.getAttribute("data-todo-id");
+      removeFromDatabase(todoId);
+    });
+  });
+}
+
 async function getAllTodos() {
   const todos = await getDocs(collection(db, `todos`));
   console.log(todos);
@@ -46,9 +64,13 @@ async function getAllTodos() {
   todos.forEach((todo) => {
     console.log(todo.id);
     console.log(todo.data());
-    const template = `<li>${todo.data().todo}</li>`;
+    const template = `<li data="${todo.id}">${todo.id} | ${
+      todo.data().todo
+    }</li>`;
     ul.insertAdjacentHTML("beforeend", template);
   });
+
+  addClickEvent();
 }
 getAllTodos();
 
