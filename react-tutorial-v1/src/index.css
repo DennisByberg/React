@@ -28,6 +28,8 @@ header {
 
 main {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   background: linear-gradient(45deg, rgb(20, 20, 20), rgb(40, 40, 40));
