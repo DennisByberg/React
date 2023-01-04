@@ -45,3 +45,45 @@ footer {
   width: 100%;
   height: 3rem;
 }
+
+#counter-section {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(97, 78, 78);
+  width: 100%;
+  user-select: none;
+}
+
+#buttons-and-number {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttons-and-number button {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgb(61, 52, 52);
+}
+
+#buttons-and-number button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#buttons-and-number p {
+  color: rgb(158, 158, 158);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: underline;
+}
