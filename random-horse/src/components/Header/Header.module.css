@@ -4,9 +4,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid white;
 }
 
 .siteName {
   color: rgb(255, 242, 218);
-  font-size: 30px;
+  font-size: 10px;
 }
