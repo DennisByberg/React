@@ -1,0 +1,7 @@
+main {
+  background: linear-gradient(20deg, rgb(40, 40, 40), rgb(60, 60, 60));
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

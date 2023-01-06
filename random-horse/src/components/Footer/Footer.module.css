@@ -1,0 +1,13 @@
+footer {
+  background-color: rgb(20, 20, 20);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgb(255, 89, 205);
+}
+
+.text {
+  color: rgb(255, 242, 218);
+  font-size: 20px;
+}

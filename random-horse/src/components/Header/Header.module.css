@@ -1,0 +1,12 @@
+header {
+  background-color: rgb(20, 20, 20);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.siteName {
+  color: rgb(255, 242, 218);
+  font-size: 30px;
+}
