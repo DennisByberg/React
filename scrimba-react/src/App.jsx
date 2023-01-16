@@ -1,15 +1,12 @@
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
+import Joke from "./components/Joke";
+import Jokes from "../jokes.json";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
-  );
+  const displayJokes = Jokes.allJokes.map((joke) => {
+    return <Joke key={joke.id} joke={joke} />;
+  });
+
+  return <div className="App">{displayJokes}</div>;
 }
 
 export default App;
