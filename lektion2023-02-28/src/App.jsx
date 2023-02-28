@@ -3,12 +3,17 @@ import Name from "./components/Name/Name";
 import Image from "./components/Image/Image";
 import About from "./components/About/About";
 
-// En komponent i react måste alltid starta med stor bokstav...
+// App component
 function App() {
   return (
     <div className="App">
+      {/* Component for Name */}
       <Name />
+
+      {/* Component for Image */}
       <Image />
+
+      {/* Component for About Section */}
       <About />
     </div>
   );

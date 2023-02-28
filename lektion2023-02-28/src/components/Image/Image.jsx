@@ -1,5 +1,6 @@
 import "./Image.css";
 
+// This component renders an image of Ada Lovelace
 const Image = () => {
   return (
     <div>
