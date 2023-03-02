@@ -1,13 +1,10 @@
 import "./Name.css";
 
-const Name = () => {
-  const firstName = "Ada"; // Variable to store the first name.
-  const lastName = "Lovelace"; // Variable to store the last name.
-
+const Name = ({ firstName, lastName }) => {
   // Function to return the full name by combining first and last name.
-  const getFullName = () => {
+  function getFullName() {
     return `${firstName} ${lastName}`;
-  };
+  }
 
   // here we declare the fullName variable with the value returned by the getFullName function.
   const fullName = getFullName();

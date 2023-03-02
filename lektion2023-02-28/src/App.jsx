@@ -8,7 +8,8 @@ function App() {
   return (
     <div className="App">
       {/* Component for Name */}
-      <Name />
+      <Name firstName="Ada" lastName="Lovelace" />
+      <Name firstName="Dennis" lastName="Lovelace" />
 
       {/* Component for Image */}
       <Image />
