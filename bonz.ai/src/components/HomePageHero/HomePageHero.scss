@@ -1,0 +1,108 @@
+.homepage-hero {
+  height: 100%;
+  &__first-section {
+    grid-column: 3 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__second-section {
+    grid-column: 7 / 12;
+    margin-left: -3rem;
+    margin-top: 10rem;
+  }
+
+  &__picture:first-child {
+    max-width: 100%;
+    min-width: 450px;
+  }
+  &__picture:last-child {
+    max-width: 100%;
+    min-height: 120px;
+    max-height: 250px;
+  }
+
+  &__picture {
+    border: 2px solid var(--black);
+    animation: shadows 10s infinite;
+  }
+
+  &__link {
+    text-decoration: none;
+    border: 1px solid var(--grey);
+    margin-top: 1rem;
+    margin-right: 3rem;
+    color: var(--green);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+  }
+
+  &__link:hover {
+    background-color: rgb(15, 15, 15);
+  }
+
+  /*------------------------------------*/
+  /* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·. */
+  /*------------------------------------*/
+  /* ✘•| TABLET & MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__second-section {
+      display: none;
+    }
+
+    &__link {
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    &__picture:first-child {
+      max-width: 100%;
+    }
+  }
+
+  /* ✘•| TABLET |•✘ */
+  @media only screen and (min-width: 412px) and (max-width: 1000px) {
+    &__picture:first-child {
+      min-width: 140px;
+      max-height: 200px;
+      margin: 1rem 0;
+    }
+  }
+
+  /* ✘•| MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 412px) {
+    &__picture:first-child {
+      min-width: 200px;
+      max-height: 150px;
+      margin: 4rem 0;
+    }
+  }
+}
+
+// Background glowing effect
+@keyframes shadows {
+  0% {
+    box-shadow: 0 0 40px #54eabd1d;
+  }
+  20% {
+    box-shadow: 0 0 40px #54eabd2a;
+  }
+  50% {
+    box-shadow: 0 0 40px #54eabd41;
+  }
+  80% {
+    box-shadow: 0 0 40px #54eabd2a;
+  }
+  100% {
+    box-shadow: 0 0 40px #54eabd1d;
+  }
+}

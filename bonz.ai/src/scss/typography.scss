@@ -1,0 +1,69 @@
+// Headings
+.heading--xl,
+.heading--large,
+.heading--medium {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.heading--xl {
+  font-size: 86px;
+}
+
+.heading--large {
+  font-size: 48px;
+}
+
+.heading--medium {
+  font-size: 28px;
+}
+
+// Body Texts
+.body-text--xl,
+.body-text--large,
+.body-text--medium,
+.body-text--small,
+.body-text--xs {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.body-text--xl {
+  font-size: 30px;
+}
+
+.body-text--large {
+  font-size: 24px;
+}
+
+.body-text--medium {
+  font-size: 20px;
+}
+
+.body-text--small {
+  font-size: 16px;
+}
+
+.body-text--xs {
+  font-size: 12px;
+}
+
+// Button Texts
+.button-text--small,
+.button-text--medium,
+.button-text--large {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.button-text--large {
+  font-size: 25px;
+}
+
+.button-text--medium {
+  font-size: 15px;
+}
+
+.button-text--small {
+  font-size: 10px;
+}

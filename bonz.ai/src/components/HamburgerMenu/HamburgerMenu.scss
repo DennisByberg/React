@@ -1,0 +1,111 @@
+// WITH HELP FROM CHATGPT.
+.hamburger-menu {
+  user-select: none;
+  display: inline-block;
+  width: 53px;
+  height: 41px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  position: fixed;
+  top: 30px;
+  z-index: 998;
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--green);
+    position: absolute;
+    left: 0;
+    transition: all 0.1s ease-in-out;
+    border-radius: 10px;
+
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+
+  &--open {
+    .hamburger-menu__line {
+      &:first-child {
+        transform: rotate(45deg);
+        top: 45%;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        bottom: 45%;
+      }
+    }
+  }
+}
+
+/*------------------------------------*/
+/* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·. */
+/*------------------------------------*/
+/* ✘•| TABLET |•✘ */
+@media only screen and (min-width: 413px) and (max-width: 650px) {
+}
+
+/* ✘•| MOBILE |•✘ */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  // WITH HELP FROM CHATGPT.
+  .hamburger-menu {
+    user-select: none;
+    display: inline-block;
+    width: 35px;
+    height: 26px;
+    cursor: pointer;
+
+    &__line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--green);
+      position: absolute;
+      left: 0;
+      transition: all 0.1s ease-in-out;
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+
+    &--open {
+      .hamburger-menu__line {
+        &:first-child {
+          transform: rotate(45deg);
+          top: 45%;
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          bottom: 45%;
+        }
+      }
+    }
+  }
+}
+
+.hamburger-menu:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,38 @@
+.homepage-header {
+  margin-top: 2rem;
+
+  &__title {
+    color: var(--white);
+    grid-column: 3 / 13;
+    margin-bottom: -15px;
+  }
+
+  &__subheading {
+    color: var(--green);
+    grid-column: 3 / 13;
+  }
+
+  /*------------------------------------*/
+  /* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·. */
+  /*------------------------------------*/
+  /* ✘•| TABLET & MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 650px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &__subheading {
+      font-size: 20px;
+    }
+  }
+
+  /* ✘•| MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 413px) {
+    &__title {
+      font-size: 48px;
+      margin-bottom: 0;
+    }
+  }
+}

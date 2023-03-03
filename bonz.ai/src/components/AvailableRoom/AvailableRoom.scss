@@ -1,0 +1,205 @@
+.available-room {
+  // border-bottom: 1px solid var(--grey);
+  border-top: 1px solid var(--grey);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  &__price {
+  }
+
+  &__picture-container {
+    grid-column: 2/7;
+    width: 100%;
+    position: relative;
+    min-width: 350px;
+  }
+
+  &__picture {
+    width: 100%;
+    animation: shadows 10s infinite;
+    border: 2px solid var(--black);
+  }
+
+  &__toggle-buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 8px;
+    text-align: center;
+
+    button {
+      background-color: var(--grey);
+      border: none;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid black;
+    }
+
+    button:hover {
+      transform: scale(1.4);
+    }
+
+    button.active {
+      background-color: var(--white);
+      transform: scale(1.3);
+    }
+  }
+
+  &__info-container {
+    grid-column: 7/13;
+    padding: 2rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  &__icon {
+    height: 22px;
+    width: 22px;
+    filter: invert(1);
+  }
+
+  &__bed-info,
+  &__toilet-info,
+  &__wifi-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--green);
+  }
+
+  &__book-room-button {
+    min-width: 5rem;
+    max-width: 10rem;
+    padding: 0.7rem 0;
+    background-color: var(--green);
+    border: 1px solid var(--grey);
+    margin-top: auto;
+    transition: 0.1s ease-in-out;
+  }
+
+  &__book-room-button:hover {
+    background-color: #54eabddc;
+    transform: scale(1.01);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &__room-name {
+    grid-column: 2/7;
+  }
+
+  &__room-description {
+    grid-column: 2/9;
+  }
+  /*------------------------------------*/
+  /* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·. */
+  /*------------------------------------*/
+  /* ✘•| TABLET & MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 650px) {
+    &__info-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 0;
+    }
+
+    &__room-name {
+      text-align: center;
+    }
+
+    &__room-description {
+      text-align: center;
+    }
+
+    &__bed-info {
+      grid-column: 1/1;
+      margin: auto;
+    }
+    &__toilet-info {
+      grid-column: 2/2;
+      margin: auto;
+    }
+    &__wifi-info {
+      grid-column: 3/3;
+      margin: auto;
+    }
+    &__book-room-button {
+      grid-column: 1/4;
+      margin-top: 10px;
+      width: 50%;
+      margin: 10px auto auto;
+    }
+  }
+
+  /* ✘•| TABLET |•✘ */
+  @media only screen and (min-width: 413px) and (max-width: 650px) {
+    &__picture-container {
+      grid-column: 2 / 8;
+    }
+    &__info-container {
+      grid-column: 2/8;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 0;
+    }
+    &__bed-info {
+      grid-column: 1/1;
+    }
+    &__toilet-info {
+      grid-column: 2/2;
+    }
+    &__wifi-info {
+      grid-column: 3/3;
+    }
+    &__book-room-button {
+      grid-column: 1/4;
+      margin-top: 10px;
+      width: 50%;
+    }
+    &__room-name {
+      grid-column: 2/8;
+    }
+
+    &__room-description {
+      grid-column: 2/8;
+    }
+  }
+
+  /* ✘•| MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 413px) {
+    &__picture-container {
+      grid-column: 1 / 5;
+    }
+    &__info-container {
+      grid-column: 1/5;
+    }
+
+    &__room-name {
+      grid-column: 1/5;
+    }
+
+    &__room-description {
+      grid-column: 1/5;
+    }
+  }
+}
+
+// background glowing effect
+@keyframes shadows {
+  0% {
+    box-shadow: 0 0 40px #54eabd1d;
+  }
+  20% {
+    box-shadow: 0 0 40px #54eabd2a;
+  }
+  50% {
+    box-shadow: 0 0 40px #54eabd41;
+  }
+  80% {
+    box-shadow: 0 0 40px #54eabd2a;
+  }
+  100% {
+    box-shadow: 0 0 40px #54eabd1d;
+  }
+}

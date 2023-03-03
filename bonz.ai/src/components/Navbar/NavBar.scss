@@ -1,0 +1,44 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 50px;
+
+  &__menu {
+    list-style-type: none;
+    display: flex;
+    grid-column: 1/13;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 40px;
+    transition: 0.3s ease-in-out;
+  }
+
+  &__logo:hover {
+    transform: scale(1.05);
+  }
+
+  /*------------------------------------*/
+  /* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·. */
+  /*------------------------------------*/
+  /* ✘•| TABLET |•✘ */
+  @media only screen and (min-width: 413px) and (max-width: 650px) {
+    grid-template-columns: repeat(8, 1fr);
+    margin: 0 40px;
+    &__logo {
+      height: 30px;
+    }
+  }
+
+  /* ✘•| MOBILE |•✘ */
+  @media only screen and (min-width: 0px) and (max-width: 413px) {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 30px;
+
+    &__logo {
+      height: 20px;
+    }
+  }
+}

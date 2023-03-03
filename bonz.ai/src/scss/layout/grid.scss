@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 50px;
+  // border: 1px dotted rgb(255, 73, 73);
+}
+
+/* .·:*¨ ✘•|  MEDIA QUERY  |•✘ ¨*:·.  */
+/* ✘•| TABLET |•✘ */
+@media only screen and (min-width: 413px) and (max-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    margin: 0 40px;
+    // border: 1px dotted rgb(124, 245, 68);
+  }
+}
+
+/* ✘•| MOBILE |•✘ */
+@media only screen and (min-width: 0px) and (max-width: 413px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 30px;
+    // border: 1px dotted rgb(99, 133, 255);
+  }
+}
