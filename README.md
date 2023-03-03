@@ -1,2 +1,1 @@
-# Exercises-Private
- ...
+# School React
