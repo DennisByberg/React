@@ -1,0 +1,39 @@
+:root {
+  --blue: #231f42;
+  --green: #37adab;
+  --greenHover: #329997;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  margin: 1rem 2rem;
+}
+
+body {
+  background-color: var(--blue);
+  user-select: none;
+}
+
+/* 
+Hide scroll bar for Chrome, Safari and Opera
+*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+.all-products class styles elements that contain multiple products.
+The flex settings are used to wrap the child elements around in a row and display them side by side, with an approximate spacing of x rem defined through the gap property.
+*/
+.all-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
