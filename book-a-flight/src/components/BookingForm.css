@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* font-family: 'PT Sans', sans-serif; */
+
+.booking-form {
+  max-width: 40rem;
+  margin: auto;
+  font-family: "PT Sans", sans-serif;
+  color: black;
+}
+
+.booking-form__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* ÅKA TÅG */
+.booking-form__heading {
+  font-size: 32px;
+  width: 100%;
+  background-color: #cecece;
+  color: black;
+  padding: 1rem 0;
+}
+
+.booking-form__city-and-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: black;
+  flex-wrap: wrap;
+  background: linear-gradient(to left, #e2e2e2 50%, #ececec 50%);
+}
+
+.booking-form__first-city-and-time-container,
+.booking-form__second-city-and-time-container {
+  flex: 1;
+  /* border: 1px solid red; */
+  padding: 0.5rem 0;
+}
+
+.booking-form__arrow {
+  width: 25px;
+}
+
+.booking-form__first-time,
+.booking-form__second-time {
+  color: rgb(151, 151, 151);
+  font-size: 0.8rem;
+}
+
+.booking-form__radio-buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.booking-form__radio-btn1,
+.booking-form__radio-btn2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.booking-form__tickets-and-title-container {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.booking-form__tickets-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.booking-form__tickets-container > label,
+.booking-form__title-container > label {
+  align-self: flex-start;
+  font-size: 12px;
+}
+
+.booking-form__tickets-container > select,
+.booking-form__title-container > select {
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.booking-form__title-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
