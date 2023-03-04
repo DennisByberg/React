@@ -1,7 +1,6 @@
 :root {
   --black: #0f0f0f;
   --white: #fff;
-  --red: #ff3c3c;
 }
 
 body {
@@ -13,9 +12,4 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.App {
-  /* min-height: 100vh; */
-  /* border: 3px solid var(--red); */
 }

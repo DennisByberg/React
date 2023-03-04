@@ -6,6 +6,7 @@
   margin: auto;
   font-family: "PT Sans", sans-serif;
   color: black;
+  user-select: none;
 }
 
 .booking-form__form {
@@ -29,7 +30,6 @@
 .booking-form__city-and-time {
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
   color: black;
   flex-wrap: wrap;
@@ -39,7 +39,6 @@
 .booking-form__first-city-and-time-container,
 .booking-form__second-city-and-time-container {
   flex: 1;
-  /* border: 1px solid red; */
   padding: 0.5rem 0;
 }
 
@@ -55,7 +54,7 @@
 
 .booking-form__radio-buttons {
   display: flex;
-  width: 100%;
+  width: 50%;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
@@ -71,7 +70,7 @@
 }
 
 .booking-form__tickets-and-title-container {
-  width: 60%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -84,20 +83,75 @@
 }
 
 .booking-form__tickets-container > label,
-.booking-form__title-container > label {
+.booking-form__title-container > label,
+.booking-form__first-name-container > label,
+.booking-form__last-name-container > label {
   align-self: flex-start;
   font-size: 12px;
 }
 
 .booking-form__tickets-container > select,
-.booking-form__title-container > select {
-  padding: 0.5rem 0.3rem;
+.booking-form__title-container > select,
+.booking-form__first-name-container > input,
+.booking-form__last-name-container > input {
+  padding: 0.5rem 0.5rem;
   border-radius: 5px;
   border: 1px solid black;
+}
+
+.booking-form__tickets-container > select,
+.booking-form__title-container > select {
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
 }
 
 .booking-form__title-container {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.booking-form__first-name-container,
+.booking-form__last-name-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.booking-form__agree-to-the-terms-container {
+  width: 90%;
+}
+
+.booking-form__agree-to-the-terms-container > label {
+  display: flex;
+  gap: 1rem;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.booking-form__book-ticket-btn {
+  background-color: var(--black);
+  color: white;
+  width: 90%;
+  padding: 1rem 0;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-form__book-ticket-btn:hover {
+  background-color: rgb(25, 25, 25);
+}
+
+.booking-form__inputs-labels-and-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 1.2rem;
 }
