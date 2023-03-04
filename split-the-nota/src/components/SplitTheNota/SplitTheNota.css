@@ -3,11 +3,11 @@
   box-shadow: -6px 6px 1px rgba(108, 131, 194, 0.26);
   border-radius: 3px;
   padding: 3rem;
-  max-width: 600px;
+  max-width: 550px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nota__sum-container,
@@ -23,9 +23,13 @@
 .nota__tip-container > input {
   border: none;
   border-bottom: 2px solid black;
-  font-size: 24px;
+  font-size: 22px;
   outline: none;
   padding: 0 0.5rem 0.5rem;
+}
+
+input::placeholder {
+  color: rgba(128, 128, 128, 0.229);
 }
 
 .nota__sum-container label,
