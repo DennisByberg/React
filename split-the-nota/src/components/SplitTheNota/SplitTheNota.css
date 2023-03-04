@@ -1,0 +1,63 @@
+.nota {
+  border: 3px solid var(--DarkPurple);
+  box-shadow: -6px 6px 1px rgba(108, 131, 194, 0.26);
+  border-radius: 3px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.nota__sum-container,
+.nota__amount-container,
+.nota__tip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nota__sum-container > input,
+.nota__amount-container > input,
+.nota__tip-container > input {
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 24px;
+  outline: none;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.nota__sum-container label,
+.nota__amount-container > label,
+.nota__tip-container > label {
+  font-size: 24px;
+  color: var(--MediumPurple);
+}
+
+.nota__calculate-btn {
+  padding: 2rem 0;
+  background-color: var(--DarkPurple);
+  color: var(--white);
+  font-size: 25px;
+  border: none;
+  box-shadow: -6px 6px 1px rgba(108, 131, 194, 0.26);
+}
+
+.nota__calculate-btn:hover {
+  box-shadow: -6px 6px 6px rgba(108, 131, 194, 0.37);
+  background-color: hsl(150, 100%, 67%);
+  color: black;
+  cursor: pointer;
+}
+
+.nota__payment {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Here, we're targeting the pseudo elements ::-webkit-inner-spin-button and ::-webkit-outer-spin-button, which are used by Webkit browsers (such as Google Chrome and Safari) to display the up/down arrows. We're setting the -webkit-appearance property to none to hide them. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
