@@ -1,6 +1,6 @@
 import "./Product.css";
 
-const Product = ({ title, author, about }) => {
+const Product = ({ title, author, about, id }) => {
   return (
     <section className="product">
       <h1 className="product__title">{title}</h1>
