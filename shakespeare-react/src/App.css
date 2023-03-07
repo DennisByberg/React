@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+/* font-family: 'MedievalSharp', cursive; */
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+:root {
+  /* solid colors */
+  --red: #ff3232;
+  --lightRed: #ff7171;
+  --black: #0f0f0f;
+  --white: #fffafa;
+  --grey: #4e4e4e;
+  --darkGrey: #181818;
+  --green: #78ff78;
+
+  /* hover colors */
+  --blackHover: #161616;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+}
+
+.App > h1 {
+  border-bottom: 1px solid var(--darkGrey);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  font-family: "MedievalSharp", cursive;
+  color: var(--red);
+  font-size: 2.3rem;
+}
+
+.App > ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
+/* SCROLLBAR DESIGN! */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  outline: 1px solid rgba(15, 83, 15, 0.418);
+  border-radius: 50px;
+}

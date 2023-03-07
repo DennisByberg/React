@@ -1,0 +1,28 @@
+.insult {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.insult__item {
+  width: 22rem;
+  min-height: 10rem;
+  border: 1px solid var(--lightRed);
+  padding: 1rem;
+  box-shadow: 0px 0px 7px var(--red);
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+.insult__insult-text {
+  font-size: 1.1rem;
+}
+
+.insult__insult-play {
+  font-style: italic;
+  margin: auto auto 0.1rem;
+  color: var(--grey);
+}
