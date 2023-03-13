@@ -1,0 +1,25 @@
+.search-movies {
+  /* border: 1px solid red; */
+  height: 5rem;
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.search-movies img {
+  height: 80%;
+}
+
+.search-movies input {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 5px black;
+}

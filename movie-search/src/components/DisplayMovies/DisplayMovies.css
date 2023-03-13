@@ -1,0 +1,14 @@
+.display-movies ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
+.error-message {
+  font-family: "Kalam", cursive;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
