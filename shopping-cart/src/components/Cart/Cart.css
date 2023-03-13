@@ -1,15 +1,23 @@
 .cart {
   display: flex;
+  align-items: center;
 }
 
 .cart__cart-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
   height: 30px;
   width: 30px;
   color: white;
+  text-transform: uppercase;
+}
+
+.cart__cart-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(238, 255, 196);
 }
 
 .cart__products-in-cart {
@@ -21,4 +29,12 @@
   justify-content: center;
   border-radius: 100%;
   background-color: white;
+  color: black;
+}
+
+.cart ul {
+  list-style-type: none;
+  margin: 1rem;
+  color: rgb(78, 78, 78);
+  font-family: helvetica;
 }

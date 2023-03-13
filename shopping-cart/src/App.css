@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+/* font-family: 'Kalam', cursive; */
+
 :root {
   --blue: #231f42;
   --green: #37adab;
@@ -13,25 +16,20 @@
 .App {
   min-height: 100vh;
   margin: 1rem 2rem;
+  font-family: helvetica;
 }
 
 body {
   background-color: var(--blue);
+  color: white;
   user-select: none;
 }
 
-/* 
-Hide scroll bar for Chrome, Safari and Opera
-*/
 body::-webkit-scrollbar {
   display: none;
 }
 
-/*
-.all-products class styles elements that contain multiple products.
-The flex settings are used to wrap the child elements around in a row and display them side by side, with an approximate spacing of x rem defined through the gap property.
-*/
-.all-products {
+.products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

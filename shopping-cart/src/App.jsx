@@ -1,19 +1,38 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Product from "./components/Product/Product";
-import products from "./products";
+import productData from "./productData";
 
 function App() {
-  const allProducts = products.map((p) => {
+  const [products, setProducts] = useState(productData);
+  const [productsInCart, setProductsInCart] = useState([]);
+  const productComponent = products.map((p) => {
     return (
-      <Product key={p.id} title={p.title} author={p.author} about={p.about} />
+      <Product
+        addBookToCart={addBookToCart}
+        products={products}
+        key={p.id}
+        title={p.title}
+        author={p.author}
+        about={p.about}
+      />
     );
   });
 
+  // This function adds a book title to the products in cart if it doesn't already exist
+  function addBookToCart(title) {
+    if (!productsInCart.includes(title)) {
+      const temp = [...productsInCart];
+      temp.push(title);
+      setProductsInCart(temp);
+    }
+  }
+
   return (
     <div className="App">
-      <Header />
-      <section className="all-products">{allProducts}</section>
+      <Header productsInCart={productsInCart} />
+      <section className="products">{productComponent}</section>
     </div>
   );
 }
