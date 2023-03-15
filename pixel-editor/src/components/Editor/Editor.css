@@ -1,0 +1,72 @@
+.editor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border-radius: 10px;
+  padding: 1rem 4rem 3rem 4rem;
+}
+
+.editor h1 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 3rem;
+}
+
+.D {
+  color: rgb(190, 111, 255);
+}
+
+.B {
+  color: rgb(255, 85, 170);
+}
+
+.editor h2 {
+  margin: 1rem 0;
+}
+
+.editor__choices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.editor__choices input {
+  margin-left: 0.5rem;
+  background-color: rgb(88, 7, 88);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 3px;
+  color: wheat;
+}
+
+.editor button {
+  width: 50%;
+  align-items: flex-end;
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 999px;
+  background-color: purple;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+}
+
+.editor button:hover {
+  background-color: rgb(107, 0, 107);
+}
+
+.twitter-picker {
+  margin: 1rem 0;
+}
+
+.max-text {
+  color: rgb(255, 125, 125);
+  font-size: 0.8rem;
+  display: flex;
+  text-align: center;
+  margin-top: 0.3rem;
+}
