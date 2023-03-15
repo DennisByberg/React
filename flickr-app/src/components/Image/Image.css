@@ -1,0 +1,11 @@
+.image {
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: 0 0 15px var(--pink);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}

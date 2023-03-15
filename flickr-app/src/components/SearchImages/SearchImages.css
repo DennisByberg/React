@@ -1,0 +1,38 @@
+.search-images {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.197);
+  width: 100%;
+}
+
+.search-images > input {
+  padding: 0.2rem 0.5rem;
+  border: 2px solid var(--blue);
+  border-radius: 50px;
+  background-color: transparent;
+  color: white;
+}
+
+.search-images > input::placeholder {
+  color: rgba(128, 128, 128, 0.322);
+  font-style: italic;
+}
+
+.search-images > button {
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  border: none;
+  border: 2px solid var(--pink);
+  color: var(--blue);
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.search-images > button:hover {
+  background-color: #212121;
+  color: var(--blue);
+  cursor: pointer;
+}
