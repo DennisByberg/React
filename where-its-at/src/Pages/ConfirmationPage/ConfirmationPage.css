@@ -1,0 +1,66 @@
+.confirmation-page {
+  /* flex properties */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.confirmation-page h1 {
+  margin: 3rem auto;
+  color: var(--pink);
+  font-family: "Merienda", cursive;
+  font-size: 40px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #999999;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+}
+
+.btn.btn-border-3::after,
+.btn.btn-border-3::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: 0.5s;
+}
+
+.btn.btn-border-3::after {
+  top: -9px;
+  left: -9px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.btn.btn-border-3::before {
+  bottom: -9px;
+  right: -9px;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.btn.btn-border-3:hover {
+  color: black;
+}
+
+.btn.btn-border-3:hover::after,
+.btn.btn-border-3:hover::before {
+  width: 40px;
+  height: 40px;
+  border-color: white;
+}

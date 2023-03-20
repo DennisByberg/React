@@ -1,0 +1,35 @@
+.buy-ticket {
+  /* flex properties */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-family: "Fira Sans", sans-serif;
+}
+
+.buy-ticket__name {
+  color: var(--pink);
+  font-family: "Merienda", cursive;
+  font-size: 35px;
+}
+
+.buy-ticket__when {
+  color: var(--blueGreen);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.buy-ticket__location {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.buy-ticket__price {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.buy-ticket__price {
+  margin: 4rem;
+}

@@ -1,0 +1,41 @@
+.buy-page {
+  /* flex properties */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 3rem;
+
+  min-height: 100vh;
+}
+
+.buy-page article {
+  margin: 0 auto auto auto;
+}
+
+.buy-page-you-are-about-text {
+  margin: 3rem auto auto auto;
+  font-size: 19px;
+  font-family: "Fira Sans", sans-serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  width: 12rem;
+}
+
+.buy-page button {
+  font-family: "Fira Sans", sans-serif;
+  background-color: var(--blueGreen);
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 1rem 3rem;
+  margin: auto auto 3rem auto;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-page button:hover {
+  background-color: rgb(108, 255, 108);
+  color: black;
+}

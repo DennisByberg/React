@@ -1,0 +1,86 @@
+.confirmation-ticket {
+  /* flex properties */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid white;
+  width: 100%;
+  max-width: 500px;
+  font-family: "Fira Sans", sans-serif;
+  background-color: white;
+  color: black;
+}
+
+.confirmation-ticket__top-container p:nth-child(1),
+.confirmation-ticket__middle-container p:nth-child(1),
+.confirmation-ticket__bottom-container div:nth-child(1) p:nth-child(1),
+.confirmation-ticket__bottom-container div:nth-child(2) p:nth-child(1),
+.confirmation-ticket__bottom-container div:nth-child(3) p:nth-child(1) {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.confirmation-ticket__top-container {
+  padding: 2rem 0;
+  position: relative;
+  border-bottom: 2px dashed grey;
+}
+
+.confirmation-ticket__top-container p:nth-child(2) {
+  color: var(--pink);
+  font-family: "Merienda", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.808);
+}
+
+.confirmation-ticket__middle-container {
+  /* flex properties */
+  display: flex;
+
+  padding: 4rem 0;
+  position: relative;
+  border-bottom: 2px dashed grey;
+}
+
+.confirmation-ticket__middle-container p:nth-child(2) {
+  position: absolute;
+  top: 30%;
+  left: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.confirmation-ticket__bottom-container {
+  /* flex properties */
+  display: flex;
+}
+
+.confirmation-ticket__bottom-container div:nth-child(1),
+.confirmation-ticket__bottom-container div:nth-child(2),
+.confirmation-ticket__bottom-container div:nth-child(3) {
+  /* flex properties */
+  flex: 1;
+
+  padding: 2rem 0;
+  position: relative;
+}
+
+.confirmation-ticket__bottom-container div:nth-child(2) {
+  border-left: 3px dotted grey;
+  border-right: 3px dotted grey;
+}
+
+.confirmation-ticket__bottom-container div:nth-child(1) p:nth-child(2),
+.confirmation-ticket__bottom-container div:nth-child(2) p:nth-child(2),
+.confirmation-ticket__bottom-container div:nth-child(3) p:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
