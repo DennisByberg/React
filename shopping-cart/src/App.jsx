@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Product from "./components/Product/Product";
-import productData from "./productData";
+// import productData from "./productData";
 
 function App() {
-  const [products, setProducts] = useState(productData);
+  const [products, setProducts] = useState([]);
   const [productsInCart, setProductsInCart] = useState([]);
   const productComponent = products.map((p) => {
     return (
@@ -14,11 +14,22 @@ function App() {
         products={products}
         key={p.id}
         title={p.title}
-        author={p.author}
-        about={p.about}
+        author={p.price}
+        about={p.description}
       />
     );
   });
+
+  useEffect(() => {
+    async function getProducts() {
+      const url = "https://dummyjson.com/products";
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data.products);
+      setProducts(data.products);
+    }
+    getProducts();
+  }, []);
 
   // This function adds a book title to the products in cart if it doesn't already exist
   function addBookToCart(title) {

@@ -8,8 +8,7 @@ const SearchMovies = ({ setUserSearch }) => {
 
   useEffect(() => {
     async function getMovies() {
-      // If-satsen finns där för att förhindra API-anropet om titeln är en tom sträng, undefined eller null eftersom det skulle vara meningslöst att fråga API:et med sådana värden.
-      if (!title) return;
+      // if (!title) return;
       const response = await fetch(`${APIKEY}${title}`);
       const jsonData = await response.json();
       setUserSearch(jsonData);

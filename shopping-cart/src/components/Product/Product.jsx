@@ -5,7 +5,7 @@ const Product = ({ title, author, about, addBookToCart }) => {
     <section className="product">
       <div className="product__border-wrapper">
         <h1 className="product__title">{title}</h1>
-        <h2 className="product__author">av {author}</h2>
+        <h2 className="product__author">{author}:-</h2>
       </div>
       <p className="product__about">{about}</p>
       <button onClick={() => addBookToCart(title)} className="product__button">
