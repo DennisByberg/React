@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Homepage.css";
 import Ticket from "../../Components/Ticket/Ticket";
+import { useNavigate, Link } from "react-router-dom";
 
 const Homepage = () => {
   const [tickets, setTickets] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getTickets() {
@@ -16,9 +18,27 @@ const Homepage = () => {
     getTickets();
   }, []);
 
+  function handleSelectedTicket(selectedTicket) {
+    const {
+      name,
+      price,
+      where,
+      when: { date, from, to },
+    } = selectedTicket;
+    const selectedTicketObject = {
+      name,
+      price,
+      location: where,
+      date,
+      eventStart: from,
+      eventStop: to,
+    };
+    navigate("/ticket/", { state: { selectedTicket: selectedTicketObject } });
+  }
+
   const ticketsComponents = tickets.map((ticket) => {
     return (
-      <a href={`/ticket/${ticket.name}`} key={ticket.name}>
+      <a onClick={() => handleSelectedTicket(ticket)} key={ticket.name}>
         <Ticket
           name={ticket.name}
           price={ticket.price}

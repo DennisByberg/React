@@ -12,12 +12,12 @@ function App() {
       // errorElement:
     },
     {
-      path: "/ticket/:ticket",
+      path: "/ticket/",
       element: <Buypage />,
       // errorElement:
     },
     {
-      path: "/confirmation/:ticket",
+      path: "/confirmation/",
       element: <ConfirmationPage />,
       // errorElement:
     },

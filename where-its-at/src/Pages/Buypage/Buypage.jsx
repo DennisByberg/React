@@ -1,36 +1,13 @@
 import "./Buypage.css";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import BuyTicket from "../../Components/BuyTicket/BuyTicket";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Buypage = () => {
-  const params = useParams();
+  const selectedTicket = useLocation();
+  const navigate = useNavigate();
 
-  const [tickets, setTickets] = useState([]);
-  const [currentTicket, setCurrentTicket] = useState();
-
-  useEffect(() => {
-    async function getTickets() {
-      const response = await fetch(
-        `https://my-json-server.typicode.com/zocom-christoffer-wallenberg/where-its-at-api/events`
-      );
-      const data = await response.json();
-      setTickets(data);
-    }
-    getTickets();
-  }, []);
-
-  useEffect(() => {
-    getTicket();
-  }, [tickets]);
-
-  function getTicket() {
-    const foundTicket = tickets.filter((ticket) => {
-      if (ticket.name === params.ticket) {
-        return ticket;
-      }
-    });
-    setCurrentTicket(foundTicket[0]);
+  function handleNavigation() {
+    navigate(`/confirmation`, { state: { selectedTicket: selectedTicket } });
   }
 
   return (
@@ -38,19 +15,17 @@ const Buypage = () => {
       <p className="buy-page-you-are-about-text">
         You are about to score some tickets to
       </p>
-      {currentTicket ? (
+      {selectedTicket ? (
         <article>
           <BuyTicket
-            name={currentTicket.name}
-            price={currentTicket.price}
-            location={currentTicket.where}
-            date={currentTicket.when.date}
-            eventStart={currentTicket.when.from}
-            eventStop={currentTicket.when.to}
+            name={selectedTicket.state.selectedTicket.name}
+            price={selectedTicket.state.selectedTicket.price}
+            location={selectedTicket.state.selectedTicket.location}
+            date={selectedTicket.state.selectedTicket.date}
+            eventStart={selectedTicket.state.selectedTicket.eventStart}
+            eventStop={selectedTicket.state.selectedTicket.eventStop}
           />
-          <a href={`/confirmation/${currentTicket.name}`}>
-            <button>Beställ</button>
-          </a>
+          <button onClick={handleNavigation}>Beställ</button>
         </article>
       ) : (
         ""

@@ -1,48 +1,27 @@
 import "./ConfirmationPage.css";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import ConfirmationTicket from "../../Components/ConfirmationTicket/ConfirmationTicket";
+import { useLocation } from "react-router-dom";
 
 const ConfirmationPage = () => {
-  const params = useParams();
-
-  const [tickets, setTickets] = useState([]);
-  const [currentTicket, setCurrentTicket] = useState();
-
-  useEffect(() => {
-    async function getTickets() {
-      const response = await fetch(
-        `https://my-json-server.typicode.com/zocom-christoffer-wallenberg/where-its-at-api/events`
-      );
-      const data = await response.json();
-      setTickets(data);
-    }
-    getTickets();
-  }, []);
-
-  useEffect(() => {
-    getTicket();
-  }, [tickets]);
-
-  function getTicket() {
-    const foundTicket = tickets.filter((ticket) => {
-      if (ticket.name === params.ticket) {
-        return ticket;
-      }
-    });
-    setCurrentTicket(foundTicket[0]);
-  }
+  const selectedTicket = useLocation();
+  console.log(selectedTicket);
 
   return (
     <section className="confirmation-page">
       <h1>Tack För Din Beställning</h1>
-      {currentTicket ? (
+      {selectedTicket ? (
         <ConfirmationTicket
-          name={currentTicket.name}
-          location={currentTicket.where}
-          date={currentTicket.when.date}
-          eventStart={currentTicket.when.from}
-          eventStop={currentTicket.when.to}
+          name={selectedTicket.state.selectedTicket.state.selectedTicket.name}
+          location={
+            selectedTicket.state.selectedTicket.state.selectedTicket.location
+          }
+          date={selectedTicket.state.selectedTicket.state.selectedTicket.date}
+          eventStart={
+            selectedTicket.state.selectedTicket.state.selectedTicket.eventStart
+          }
+          eventStop={
+            selectedTicket.state.selectedTicket.state.selectedTicket.eventStop
+          }
         />
       ) : (
         ""
