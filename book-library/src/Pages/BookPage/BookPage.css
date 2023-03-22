@@ -1,0 +1,9 @@
+.book-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 2px dashed #00000050;
+  min-height: 100vh;
+  padding-top: 2rem;
+}

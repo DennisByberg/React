@@ -1,0 +1,19 @@
+:root {
+  --darkGrey: #222222;
+  --white: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: var(--darkGrey);
+  color: var(--white);
+  font-family: Roboto;
+
+  margin: 0 5rem;
+}
