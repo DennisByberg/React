@@ -1,22 +1,12 @@
 import "./BookPage.css";
 import SelectedBook from "../../Components/SelectedBook/SelectedBook";
+import SelectedBookInfo from "../../Components/SelectedBookInfo/SelectedBookInfo";
 
 const BookPage = () => {
-  // const selectedBookData = {
-  //   id: selectedBook.id,
-  //   title: selectedBook.title,
-  //   author: selectedBook.author,
-  //   audience: selectedBook.audience,
-  //   color: selectedBook.color,
-  //   pages: selectedBook.pages,
-  //   plot: selectedBook.plot,
-  //   publisher: selectedBook.publisher,
-  //   year: selectedBook.year,
-  // };
-
   return (
     <section className="book-page">
       <SelectedBook />
+      <SelectedBookInfo />
     </section>
   );
 };

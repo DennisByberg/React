@@ -1,0 +1,78 @@
+.selected-book-info {
+  height: 60vh;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1rem 25px;
+
+  position: relative;
+}
+
+.selected-book-info__title-and-author-container {
+  margin: 0.5rem 0;
+  border: 1px solid red;
+}
+
+.selected-book-info__title {
+  font-size: 2rem;
+}
+
+.selected-book-info__author {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.selected-book-info button {
+  width: 50%;
+  padding: 0.6rem 0.2rem;
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.selected-book-info img {
+  border: 2px solid black;
+  border-radius: 999px;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  background-color: grey;
+
+  transition: 150ms ease-in-out;
+}
+
+.selected-book-info img:hover {
+  background-color: rgba(128, 128, 128, 0.74);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.selected-book-info__numbers-info {
+  background: rgba(196, 196, 196, 0.08);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.selected-book-info__numbers-info-container-1,
+.selected-book-info__numbers-info-container-2 {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .selected-book-info {
+    margin-bottom: 1rem;
+  }
+}

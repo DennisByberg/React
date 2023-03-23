@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  border: 2px dashed #00000050;
   min-height: 100vh;
   padding-top: 2rem;
 }
@@ -11,7 +11,6 @@
 .books-page__title {
   font-size: 35px;
   font-weight: 700;
-  text-align: center;
 }
 
 .books-page__books-ul-list {

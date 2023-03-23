@@ -1,9 +1,14 @@
 .book-page {
   display: flex;
-  flex-direction: column;
   align-items: center;
-
-  border: 2px dashed #00000050;
+  justify-content: center;
   min-height: 100vh;
   padding-top: 2rem;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .book-page {
+    flex-direction: column;
+  }
 }

@@ -18,7 +18,7 @@ const Book = ({ title, author, color }) => {
       onClick={() => handleBookClick(title)}
       className="book"
       style={{
-        backgroundColor: color,
+        background: `linear-gradient(45deg, ${color} 55%, rgba(255,255,255,0.8) 100%)`,
       }}
     >
       <p className="book__title">{title}</p>

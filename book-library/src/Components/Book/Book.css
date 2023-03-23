@@ -10,6 +10,13 @@
   box-shadow: 1px 1px 3px rgb(0, 0, 0);
 
   position: relative;
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.book:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 10px rgb(80, 80, 80);
 }
 
 .book::before {

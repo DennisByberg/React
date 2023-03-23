@@ -6,7 +6,6 @@ import Book from "../../Components/Book/Book";
 const BooksPage = () => {
   const [books, setBooks] = useState(booksArray);
   const amountOfBooks = books.length;
-  // console.log(books);
 
   const booksComponents = books.map((book) => {
     return (
