@@ -1,0 +1,32 @@
+@import "../../sass/fonts";
+@import "../../sass/colors";
+@import "../../sass/mixins";
+
+.special-person-card {
+  @include fontFamilyFiraSans;
+  @include cartsFlexSettings;
+
+  background-color: $white;
+  color: $black;
+
+  width: 430px;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    @include titleTextStyle;
+    padding: 0 1rem;
+  }
+
+  &__description {
+    @include descriptionTextStyle;
+    padding: 0 1rem;
+  }
+
+  &__button {
+    @include ohTakeMyButtonStyle;
+    margin: 2rem 0 1rem 1rem;
+  }
+}

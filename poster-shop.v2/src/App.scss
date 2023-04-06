@@ -1,0 +1,17 @@
+@import "./sass/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

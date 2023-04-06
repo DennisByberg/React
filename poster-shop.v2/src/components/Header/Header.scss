@@ -1,0 +1,26 @@
+@import "../../sass/colors";
+@import "../../sass/fonts";
+
+.header {
+  background-color: $green;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 1rem 1rem 0 1rem;
+
+  &__nav-icon {
+    align-self: start;
+    width: 40px;
+  }
+
+  &__title {
+    @include fontFamilyRoboto;
+    color: $black;
+    font-size: 80px;
+  }
+
+  &__ninjahead-img {
+    width: 200px;
+  }
+}
