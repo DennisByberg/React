@@ -1,0 +1,62 @@
+@import "../../sass/colors";
+@import "../../sass/fonts";
+
+.card {
+  @include fontFamilyPTMono;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: orange;
+
+  &__chip-and-vendor-container {
+    display: flex;
+    justify-content: space-between;
+
+    // chip (img)
+    :first-child {
+      width: 40px;
+    }
+
+    // vendor (img)
+    :last-child {
+      width: 25px;
+    }
+  }
+
+  &__cart-number {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  &__card-holder-name-and-valid-thru-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__cardholder-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    :first-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.616);
+    }
+
+    :last-child {
+      font-size: 18px;
+    }
+  }
+
+  &__valid-thru-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}

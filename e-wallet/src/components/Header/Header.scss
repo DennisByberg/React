@@ -1,0 +1,9 @@
+@import "../../sass/fonts";
+@import "../../sass/colors";
+
+.header {
+  @include fontFamilySourceSansPro;
+  &__title {
+    font-size: clamp(40px, 6vw, 80px);
+  }
+}
