@@ -11,6 +11,8 @@
 
   &__add-a-new-card-button {
     @include fontFamilyPTMono;
+    width: 100%;
+    max-width: 350px;
     font-weight: 700;
     font-size: 22px;
     border-radius: 6px;

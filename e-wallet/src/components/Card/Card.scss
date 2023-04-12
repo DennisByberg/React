@@ -5,12 +5,13 @@
   @include fontFamilyPTMono;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.3rem;
 
-  border: 1px solid black;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: orange;
+  width: 100%;
+  max-width: 350px;
 
   &__chip-and-vendor-container {
     display: flex;

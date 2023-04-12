@@ -4,6 +4,8 @@
 .header {
   @include fontFamilySourceSansPro;
   &__title {
-    font-size: clamp(40px, 6vw, 80px);
+    font-size: clamp(30px, 6vw, 60px);
+    width: 350px;
+    text-align: center;
   }
 }

@@ -14,7 +14,7 @@ function Card({ cardHolderName, cartNumber, validThru, ccv, vendor }) {
       <div className="card__card-holder-name-and-valid-thru-container">
         <div className="card__cardholder-name-container">
           <p>CARDHOLDER NAME</p>
-          <p>{cardHolderName.toUpperCase()}</p>
+          <p>{cardHolderName}</p>
         </div>
         <div className="card__valid-thru-container">
           <p>VALID THRU</p>

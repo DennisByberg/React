@@ -1,0 +1,64 @@
+@import "../../sass/colors";
+@import "../../sass/fonts";
+
+.form {
+  @include fontFamilyPTMono;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 350px;
+
+  &__input,
+  &__select {
+    padding: 1rem;
+    border: 1px solid hsla(0, 0%, 0%, 0.815);
+    border-radius: 8px;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: #000000cc;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__group-valid-and-ccv {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__group-valid {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  &__group-ccv {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  &__button {
+    width: 100%;
+    font-weight: 700;
+    color: white;
+    font-size: 22px;
+    border: none;
+    border-radius: 6px;
+    justify-content: center;
+    padding: 1.5rem 3rem;
+    background-size: 300%;
+    transition: all 0.6s;
+    background-image: linear-gradient(90deg, black 50%, rgb(187, 255, 171) 50%);
+    margin-top: 3rem;
+    &:hover {
+      color: #000000;
+      background-position: 100%;
+      cursor: pointer;
+    }
+  }
+}
