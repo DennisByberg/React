@@ -20,6 +20,7 @@ const Form = ({
         </label>
         <input
           className="form__input"
+          placeholder="e.g. 1234 1234 1234 1234"
           type="text"
           id="cardNumber"
           // value={cardNumber}
@@ -32,6 +33,7 @@ const Form = ({
         </label>
         <input
           className="form__input"
+          placeholder="e.g. Dennis Byberg"
           type="text"
           id="cardholderName"
           // value={cardholderName}
@@ -46,6 +48,7 @@ const Form = ({
           </label>
           <input
             className="form__input"
+            placeholder="MM / YY"
             type="text"
             id="validThru"
             // value={validThru}
@@ -58,6 +61,7 @@ const Form = ({
           </label>
           <input
             className="form__input"
+            placeholder="e.g. 999"
             type="text"
             id="ccv"
             // value={ccv}

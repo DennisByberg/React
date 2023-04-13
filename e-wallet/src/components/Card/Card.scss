@@ -8,14 +8,16 @@
   gap: 1.3rem;
 
   border-radius: 10px;
-  padding: 1.5rem;
+  border: 1px solid black;
+  padding: 1rem;
   background-color: orange;
   width: 100%;
   max-width: 350px;
+  margin-bottom: -8.8rem;
+  text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
 
   &:hover {
-    box-shadow: 0 0 3px black;
-    transform: scale(1.03);
+    box-shadow: 0 0 10px black;
     cursor: pointer;
   }
 
@@ -31,6 +33,7 @@
     // vendor (img)
     :last-child {
       width: 25px;
+      align-self: start;
     }
   }
 
@@ -47,12 +50,12 @@
 
   &__cardholder-name-container {
     display: flex;
+    gap: 0.4rem;
     flex-direction: column;
     align-items: flex-start;
 
     :first-child {
       font-size: 12px;
-      color: rgba(0, 0, 0, 0.616);
     }
 
     :last-child {
@@ -63,12 +66,12 @@
   &__valid-thru-container {
     display: flex;
     flex-direction: column;
+    gap: 0.4rem;
     align-items: flex-end;
     justify-content: flex-end;
 
     :first-child {
       font-size: 12px;
-      color: rgba(0, 0, 0, 0.616);
     }
 
     :last-child {

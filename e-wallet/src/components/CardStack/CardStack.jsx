@@ -6,14 +6,14 @@ import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 
 function CardStack() {
-  const { cards } = useSelector((state) => state);
+  const { cards } = useSelector((state) => state.cards);
 
   const cardsComponents = cards.map((card) => {
     return (
       <Card
         key={card.cardNumber}
         cardholderName={card.cardholderName}
-        cartNumber={card.cardNumber}
+        cardNumber={card.cardNumber}
         validThru={card.validThru}
         ccv={card.ccv}
         vendor={card.vendor}

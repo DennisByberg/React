@@ -1,0 +1,29 @@
+@import "../sass/fonts";
+
+@mixin buttonStyle {
+  @include fontFamilyPTMono;
+  width: 100%;
+  max-width: 350px;
+  font-weight: 700;
+  font-size: 22px;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  background-size: 300%;
+  transition: all 0.4s;
+}
+
+@mixin labelStyle {
+  font-size: 12px;
+  color: #000000cc;
+}
+
+@mixin descriptionStyle {
+  @include fontFamilySourceSansPro;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  color: #22222299;
+}

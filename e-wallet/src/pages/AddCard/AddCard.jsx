@@ -40,13 +40,16 @@ function AddCard() {
   return (
     <section className="add-card">
       <Header title={"ADD A NEW BANK CARD"} />
-      <NewCard
-        cardNumber={cardNumber}
-        cardholderName={cardholderName}
-        validThru={validThru}
-        ccv={ccv}
-        vendor={vendor}
-      />
+      <div>
+        <p className="add-card__description">ACTIVE CARD</p>
+        <NewCard
+          cardNumber={cardNumber}
+          cardholderName={cardholderName}
+          validThru={validThru}
+          ccv={ccv}
+          vendor={vendor}
+        />
+      </div>
       <CardForm
         setCardNumber={setCardNumber}
         setCardholderName={setCardholderName}
@@ -54,9 +57,19 @@ function AddCard() {
         setCcv={setCcv}
         setVendor={setVendor}
       />
-      <button onClick={handleAddCard} className="add-card__button">
-        ADD CARD
-      </button>
+      <div className="add-card__buttons">
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+          className="add-card__go-back-button"
+        >
+          GO BACK
+        </button>
+        <button onClick={handleAddCard} className="add-card__add-card-button">
+          ADD CARD
+        </button>
+      </div>
     </section>
   );
 }
