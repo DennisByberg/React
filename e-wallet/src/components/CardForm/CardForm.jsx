@@ -78,9 +78,9 @@ const Form = ({
         >
           <option value=""></option>
           <option value="bitcoin">BITCOIN INC</option>
-          <option value="ninjabank">NINJA BANK</option>
-          <option value="blockchaicinc">BLOCK CHAIN INC</option>
-          <option value="evilcorp">EVIL CORP</option>
+          <option value="ninja">NINJA BANK</option>
+          <option value="blockchain">BLOCK CHAIN INC</option>
+          <option value="evil">EVIL CORP</option>
         </select>
       </div>
     </form>

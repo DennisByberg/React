@@ -19,6 +19,14 @@ export const cardsSlice = createSlice({
       ccv: 222,
       vendor: "evil",
     },
+    {
+      id: "1814 3333 9121 3221",
+      cardholderName: "Polka Kattsson",
+      cardNumber: "1814 3333 9121 3221",
+      validThru: "11/25",
+      ccv: 333,
+      vendor: "ninja",
+    },
   ],
   reducers: {
     addNewCardToCardStack: (state, action) => {

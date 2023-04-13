@@ -12,7 +12,7 @@ function CardStack() {
     return (
       <Card
         key={card.cardNumber}
-        cardHolderName={card.cardholderName}
+        cardholderName={card.cardholderName}
         cartNumber={card.cardNumber}
         validThru={card.validThru}
         ccv={card.ccv}

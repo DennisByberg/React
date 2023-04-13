@@ -12,7 +12,12 @@
   background-color: orange;
   width: 100%;
   max-width: 350px;
-  border: 1px solid black;
+
+  &:hover {
+    box-shadow: 0 0 3px black;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
 
   &__chip-and-vendor-container {
     display: flex;

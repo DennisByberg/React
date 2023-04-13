@@ -1,4 +1,6 @@
 .card-stack {
   &__ul {
+    display: flex;
+    flex-direction: column;
   }
 }

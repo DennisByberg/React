@@ -2,8 +2,8 @@
 import "./HomePage.scss";
 // components
 import Header from "../../components/Header/Header";
-import Card from "../../components/Card/Card";
 import CardStack from "../../components/CardStack/CardStack";
+import Card from "../../components/Card/Card";
 // react-router
 import { useNavigate } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function HomePage() {
   return (
     <section className="homepage">
       <Header title={"E-WALLET"} />
+      <Card cartNumber={"9999 9999 1234 9999"} cardholderName={"Olga Katt"} />
       <CardStack />
       <button
         onClick={() => {
