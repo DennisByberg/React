@@ -1,7 +1,7 @@
 @import "../../sass/colors";
 @import "../../sass/fonts";
 
-.card {
+.new-card {
   @include fontFamilyPTMono;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 
   border-radius: 10px;
   padding: 1.5rem;
-  background-color: orange;
+  background-color: rgb(142, 142, 142);
   width: 100%;
   max-width: 350px;
   border: 1px solid black;

@@ -2,11 +2,12 @@
 import "./Card.scss";
 
 function Card({ cardHolderName, cartNumber, validThru, ccv, vendor }) {
+  console.log(vendor);
   return (
     <section className="card">
       <div className="card__chip-and-vendor-container">
         <img src="../src/assets/chip-dark.svg" />
-        <img src="../src/assets/vendor-bitcoin.svg" />
+        <img src={`../src/assets/vendor-${vendor}.svg `} />
       </div>
 
       <p className="card__cart-number">{cartNumber}</p>
@@ -24,4 +25,5 @@ function Card({ cardHolderName, cartNumber, validThru, ccv, vendor }) {
     </section>
   );
 }
+
 export default Card;

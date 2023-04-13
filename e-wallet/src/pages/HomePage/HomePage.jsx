@@ -13,7 +13,6 @@ function HomePage() {
   return (
     <section className="homepage">
       <Header title={"E-WALLET"} />
-      <Card />
       <CardStack />
       <button
         onClick={() => {

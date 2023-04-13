@@ -22,8 +22,8 @@ function CardStack() {
   });
 
   return (
-    <section>
-      <ul>{cardsComponents}</ul>
+    <section className="card-stack">
+      <ul className="card-stack__ul">{cardsComponents}</ul>
     </section>
   );
 }

@@ -1,18 +1,15 @@
-// react
-import { useState } from "react";
 // sass
 import "./CardForm.scss";
 
-const Form = () => {
-  const [cardNumber, setCardNumber] = useState("");
-  const [cardholderName, setCardholderName] = useState("");
-  const [validThru, setValidThru] = useState("");
-  const [ccv, setCcv] = useState("");
-  const [vendor, setVendor] = useState("");
-
+const Form = ({
+  setCardNumber,
+  setCardholderName,
+  setValidThru,
+  setCcv,
+  setVendor,
+}) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");
   };
 
   return (
@@ -25,7 +22,7 @@ const Form = () => {
           className="form__input"
           type="text"
           id="cardNumber"
-          value={cardNumber}
+          // value={cardNumber}
           onChange={(e) => setCardNumber(e.target.value)}
         />
       </div>
@@ -37,7 +34,7 @@ const Form = () => {
           className="form__input"
           type="text"
           id="cardholderName"
-          value={cardholderName}
+          // value={cardholderName}
           onChange={(e) => setCardholderName(e.target.value)}
         />
       </div>
@@ -51,7 +48,7 @@ const Form = () => {
             className="form__input"
             type="text"
             id="validThru"
-            value={validThru}
+            // value={validThru}
             onChange={(e) => setValidThru(e.target.value)}
           />
         </div>
@@ -63,7 +60,7 @@ const Form = () => {
             className="form__input"
             type="text"
             id="ccv"
-            value={ccv}
+            // value={ccv}
             onChange={(e) => setCcv(e.target.value)}
           />
         </div>
@@ -76,7 +73,7 @@ const Form = () => {
         <select
           className="form__select"
           id="vendor"
-          value={vendor}
+          // value={vendor}
           onChange={(e) => setVendor(e.target.value)}
         >
           <option value=""></option>
@@ -86,9 +83,6 @@ const Form = () => {
           <option value="evilcorp">EVIL CORP</option>
         </select>
       </div>
-      <button className="form__button" type="submit">
-        ADD CARD
-      </button>
     </form>
   );
 };
