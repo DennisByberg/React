@@ -2,9 +2,16 @@
 import "./ActiveCard.scss";
 // redux
 import { useSelector } from "react-redux";
+// react
+import React, { useState } from "react";
 
 function ActiveCard() {
   const { activeCard } = useSelector((state) => state.cards);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  function handleCardClick() {
+    setIsFlipped(!isFlipped);
+  }
 
   function getBGColor() {
     switch (activeCard.vendor) {
@@ -27,10 +34,11 @@ function ActiveCard() {
     return activeCard.vendor === "bitcoin" ? "#222222" : "#ffffff";
   }
 
-  return (
+  return !isFlipped ? (
     <section
-      className="card"
+      className={`card ${isFlipped ? "flipped" : ""}`}
       style={{ backgroundColor: getBGColor(), color: getTextColor() }}
+      onClick={handleCardClick}
     >
       <div className="card__chip-and-vendor-container">
         <img
@@ -52,6 +60,24 @@ function ActiveCard() {
           <p>VALID THRU</p>
           <p>{activeCard.validThru}</p>
         </div>
+      </div>
+    </section>
+  ) : (
+    <section
+      className={`card ${isFlipped ? "flipped" : ""}`}
+      style={{ backgroundColor: getBGColor(), color: getTextColor() }}
+      onClick={handleCardClick}
+    >
+      <div
+        className={
+          activeCard.vendor === "ninja"
+            ? "card__magnetic-stripe-light"
+            : "card__magnetic-stripe"
+        }
+      ></div>
+      <div className="card__ccv-container">
+        <p>CCV</p>
+        <p>{activeCard.ccv}</p>
       </div>
     </section>
   );
