@@ -1,6 +1,14 @@
 import "./NewCard.scss";
 
-function NewCard({ cardNumber, cardholderName, validThru, ccv, vendor }) {
+function NewCard({
+  cardNumber,
+  cardholderName,
+  validThru,
+  ccv,
+  vendor,
+  validThruYY,
+  validThruMM,
+}) {
   function getBGColorOnNewCard() {
     switch (vendor) {
       case "bitcoin":
@@ -19,7 +27,6 @@ function NewCard({ cardNumber, cardholderName, validThru, ccv, vendor }) {
   }
 
   function getTextColor() {
-    console.log(vendor);
     return vendor === "bitcoin" || vendor === undefined || vendor === ""
       ? "#222222"
       : "#ffffff";
@@ -49,11 +56,15 @@ function NewCard({ cardNumber, cardholderName, validThru, ccv, vendor }) {
       >
         <div className="new-card__cardholder-name-container">
           <p>CARDHOLDER NAME</p>
-          <p>{cardholderName}</p>
+          <p className="text-shadow">{cardholderName}</p>
         </div>
+
         <div className="new-card__valid-thru-container">
-          <p>VALID THRU</p>
-          <p>{validThru}</p>
+          <p className="new-card__valid-thru-txt">VALID THRU</p>
+          <div className="new-card__valid-thru-mm-and-yy-container">
+            <p className="text-shadow">{validThruMM}</p>/
+            <p className="text-shadow"> {validThruYY}</p>
+          </div>
         </div>
       </div>
     </section>

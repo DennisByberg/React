@@ -16,9 +16,19 @@ function AddCard() {
   // react
   const [cardNumber, setCardNumber] = useState("XXXX XXXX XXXX XXXX");
   const [cardholderName, setCardholderName] = useState("FIRSTNAME LASTNAME");
-  const [validThru, setValidThru] = useState("MM/YY");
-  const [ccv, setCcv] = useState(821);
+  const [validThru, setValidThru] = useState("");
+  const [ccv, setCcv] = useState();
   const [vendor, setVendor] = useState();
+
+  const [validThruMM, setValidThruMM] = useState("MM");
+  const [validThruYY, setValidThruYY] = useState("YY");
+
+  // Checks
+  const [isCcvValid, setIsCcvValid] = useState(false);
+  const [isVendorValid, setIsVendorValid] = useState(false);
+  const [isValidThruMMValid, setIsValidThruMMValid] = useState(false);
+  const [isValidThruYYValid, setIsValidThruYYValid] = useState(false);
+
   // redux
   const dispatch = useDispatch();
   //router
@@ -33,8 +43,8 @@ function AddCard() {
       ccv: ccv,
       vendor: vendor,
     };
-    dispatch(addNewCardToCardStack(newCard));
-    navigate("/");
+    // dispatch(addNewCardToCardStack(newCard));
+    // navigate("/");
   }
 
   return (
@@ -45,7 +55,9 @@ function AddCard() {
         <NewCard
           cardNumber={cardNumber}
           cardholderName={cardholderName}
-          validThru={validThru}
+          // validThru={validThru}
+          validThruMM={validThruMM}
+          validThruYY={validThruYY}
           ccv={ccv}
           vendor={vendor}
         />
@@ -56,6 +68,18 @@ function AddCard() {
         setValidThru={setValidThru}
         setCcv={setCcv}
         setVendor={setVendor}
+        setIsCcvValid={setIsCcvValid}
+        isCcvValid={isCcvValid}
+        setIsVendorValid={setIsVendorValid}
+        isVendorValid={isVendorValid}
+        validThruMM={validThruMM}
+        setValidThruMM={setValidThruMM}
+        validThruYY={validThruYY}
+        setValidThruYY={setValidThruYY}
+        isValidThruMMValid={isValidThruMMValid}
+        setIsValidThruMMValid={setIsValidThruMMValid}
+        isValidThruYYValid={isValidThruYYValid}
+        setIsValidThruYYValid={setIsValidThruYYValid}
       />
       <div className="add-card__buttons">
         <button

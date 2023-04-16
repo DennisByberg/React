@@ -16,10 +16,17 @@
     border: 1px solid hsla(0, 0%, 0%, 0.815);
     border-radius: 8px;
     font-size: 14px;
+    outline: none;
+    box-shadow: 1px 1px 1px black;
 
     &::placeholder {
       font-style: italic;
       color: rgb(158, 158, 158);
+    }
+
+    &--success {
+      border-color: #46f546 !important; // Green border for correct input
+      box-shadow: 1px 1px 1px #46f546;
     }
   }
 
@@ -40,8 +47,28 @@
   &__group-valid {
     display: flex;
     flex-direction: column;
-    width: 45%;
   }
+
+  // INPUTS
+  &__valid-inputs-container {
+    width: 100%;
+    // MM
+    :nth-child(1) {
+      width: 30%;
+      border: none;
+      border-left: 2px solid black;
+      box-shadow: 0 0 0;
+    }
+
+    // YY
+    :nth-child(2) {
+      width: 30%;
+      border: none;
+      border-right: 2px solid black;
+      box-shadow: 0 0 0;
+    }
+  }
+
   &__group-ccv {
     display: flex;
     flex-direction: column;
