@@ -11,14 +11,19 @@
   border: 1px solid black;
   padding: 1rem;
   background-color: orange;
-  width: 340px;
+  width: 350px;
   height: 210px;
-  margin-bottom: -8.8rem;
+
+  // margin: -5rem 0;
   text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
 
   &:hover {
     box-shadow: 0 0 10px black;
     cursor: pointer;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: -9rem;
   }
 
   &__chip-and-vendor-container {

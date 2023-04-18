@@ -1,16 +1,85 @@
 @import "../../sass/colors";
 @import "../../sass/fonts";
 
-.card.flipped {
+.active-card.flipped {
   transform: rotateY(360deg);
   padding: 1rem 0;
-
   justify-content: space-between;
 }
 
-.card {
+.active-card {
   transition: transform 0.3s ease;
+  @include fontFamilyPTMono;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
 
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 1rem;
+  background-color: orange;
+  width: 340px;
+  height: 210px;
+  text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
+
+  &:hover {
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+  }
+
+  &__chip-and-vendor-container {
+    display: flex;
+    justify-content: space-between;
+
+    // chip (img)
+    :first-child {
+      width: 40px;
+    }
+
+    // vendor (img)
+    :last-child {
+      width: 25px;
+      align-self: start;
+    }
+  }
+
+  &__card-holder-name-and-valid-thru-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__cardholder-name-container {
+    display: flex;
+    gap: 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    :first-child {
+      font-size: 12px;
+    }
+
+    :last-child {
+      font-size: 18px;
+    }
+  }
+
+  &__valid-thru-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    :first-child {
+      font-size: 12px;
+    }
+
+    :last-child {
+      font-size: 18px;
+    }
+  }
+
+  // BACKSIDE
   &__magnetic-stripe {
     background-color: black;
     height: 45px;

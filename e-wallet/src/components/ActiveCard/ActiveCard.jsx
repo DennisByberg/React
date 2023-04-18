@@ -36,11 +36,11 @@ function ActiveCard() {
 
   return !isFlipped ? (
     <section
-      className={`card ${isFlipped ? "flipped" : ""}`}
+      className={`active-card ${isFlipped ? "flipped" : ""}`}
       style={{ backgroundColor: getBGColor(), color: getTextColor() }}
       onClick={handleCardClick}
     >
-      <div className="card__chip-and-vendor-container">
+      <div className="active-card__chip-and-vendor-container">
         <img
           src={`../src/assets/chip-${
             activeCard.vendor === "bitcoin" ? "dark" : "light"
@@ -51,12 +51,12 @@ function ActiveCard() {
 
       <p className="card__cart-number">{activeCard.cardNumber}</p>
 
-      <div className="card__card-holder-name-and-valid-thru-container">
-        <div className="card__cardholder-name-container">
+      <div className="active-card__card-holder-name-and-valid-thru-container">
+        <div className="active-card__cardholder-name-container">
           <p>CARDHOLDER NAME</p>
           <p>{activeCard.cardholderName}</p>
         </div>
-        <div className="card__valid-thru-container">
+        <div className="active-card__valid-thru-container">
           <p>VALID THRU</p>
           <p>{activeCard.validThru}</p>
         </div>
@@ -64,18 +64,18 @@ function ActiveCard() {
     </section>
   ) : (
     <section
-      className={`card ${isFlipped ? "flipped" : ""}`}
+      className={`active-card ${isFlipped ? "flipped" : ""}`}
       style={{ backgroundColor: getBGColor(), color: getTextColor() }}
       onClick={handleCardClick}
     >
       <div
         className={
           activeCard.vendor === "ninja"
-            ? "card__magnetic-stripe-light"
-            : "card__magnetic-stripe"
+            ? "active-card__magnetic-stripe-light"
+            : "active-card__magnetic-stripe"
         }
       ></div>
-      <div className="card__ccv-container">
+      <div className="active-card__ccv-container">
         <p>CCV</p>
         <p>{activeCard.ccv}</p>
       </div>

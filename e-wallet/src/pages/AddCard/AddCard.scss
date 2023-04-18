@@ -5,10 +5,11 @@
 .add-card {
   @include flexColumnCenter;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
+
+  padding: 1rem 0;
 
   min-height: 100vh;
-  padding: 3rem 1rem;
 
   &__description {
     @include descriptionStyle;
