@@ -1,0 +1,13 @@
+// Default card...
+@mixin cardDefaultStyle {
+  @include fontFamilyPTMono;
+  width: 350px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+  border: 1px solid $black;
+  border-radius: 10px;
+  padding: 1.5rem;
+}

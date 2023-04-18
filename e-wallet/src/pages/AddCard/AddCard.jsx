@@ -116,7 +116,7 @@ function AddCard() {
     <section className="add-card">
       <Header title={"ADD A NEW BANK CARD"} />
       <div>
-        <p className="add-card__description">ACTIVE CARD</p>
+        <p className="add-card__description">NEW CARD</p>
         <NewCard {...newCardData} />
       </div>
       <CardForm {...cardFormData} />

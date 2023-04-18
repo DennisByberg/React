@@ -1,18 +1,10 @@
 @import "../../sass/colors";
 @import "../../sass/fonts";
+@import "../../sass/mixins";
+@import "../../sass/cardMixins";
 
 .new-card {
-  @include fontFamilyPTMono;
-  display: flex;
-  flex-direction: column;
-  gap: 1.3rem;
-  border: 1px solid black;
-
-  border-radius: 10px;
-  padding: 1.5rem;
-  background-color: rgb(142, 142, 142);
-  width: 340px;
-  height: 210px;
+  @include cardDefaultStyle;
 
   &__chip-and-vendor-container {
     display: flex;

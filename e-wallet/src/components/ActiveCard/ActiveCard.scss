@@ -1,5 +1,7 @@
 @import "../../sass/colors";
 @import "../../sass/fonts";
+@import "../../sass/mixins";
+@import "../../sass/cardMixins";
 
 .active-card.flipped {
   transform: rotateY(360deg);
@@ -8,18 +10,9 @@
 }
 
 .active-card {
+  @include cardDefaultStyle;
   transition: transform 0.3s ease;
-  @include fontFamilyPTMono;
-  display: flex;
-  flex-direction: column;
-  gap: 1.3rem;
 
-  border-radius: 10px;
-  border: 1px solid black;
-  padding: 1rem;
-  background-color: orange;
-  width: 340px;
-  height: 210px;
   text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
 
   &:hover {
