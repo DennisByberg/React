@@ -49,21 +49,33 @@ function AddCard() {
 
   // Denna funktion hanterar att lägga till ett nytt kort i kortstacken. Den kombinerar kortdetaljerna (kortnummer, kortinnehavarens namn, giltighetstid, CCV-kod och leverantör) till ett nytt kortobjekt, skickar en åtgärd för att lägga till det nya kortet i kortstacken och navigerar sedan till startsidan.
   function handleAddCard() {
-    const combinedValidThru = `${validThruMM}/${validThruYY}`;
-    const fullName = `${firstName.toUpperCase()} ${lastName.toUpperCase()}`;
-    const combinedCardNumber = `${cardNumberSectionOne} ${cardNumberSectionTwo} ${cardNumberSectionThree} ${cardNumberSectionFour}`;
+    if (
+      (isCardNumberSectionOneValid && isCardNumberSectionTwoValid,
+      isCardNumberSectionThreeValid &&
+        isCardNumberSectionFourValid &&
+        isLastNameValid &&
+        isFirstNameValid &&
+        isValidThruYYValid &&
+        isValidThruMMValid &&
+        isVendorValid &&
+        isCcvValid)
+    ) {
+      const combinedValidThru = `${validThruMM}/${validThruYY}`;
+      const fullName = `${firstName.toUpperCase()} ${lastName.toUpperCase()}`;
+      const combinedCardNumber = `${cardNumberSectionOne} ${cardNumberSectionTwo} ${cardNumberSectionThree} ${cardNumberSectionFour}`;
 
-    const newCard = {
-      id: combinedCardNumber,
-      cardNumber: combinedCardNumber,
-      cardholderName: fullName,
-      validThru: combinedValidThru,
-      ccv: ccv,
-      vendor: vendor,
-    };
+      const newCard = {
+        id: combinedCardNumber,
+        cardNumber: combinedCardNumber,
+        cardholderName: fullName,
+        validThru: combinedValidThru,
+        ccv: ccv,
+        vendor: vendor,
+      };
 
-    dispatch(addNewCardToCardStack(newCard));
-    navigate("/");
+      dispatch(addNewCardToCardStack(newCard));
+      navigate("/");
+    }
   }
 
   const cardFormData = {

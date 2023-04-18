@@ -8,6 +8,8 @@ import {
   addNewCardToCardStack,
 } from "../../redux/cards";
 
+import crossPNG from "../../assets/cross.png";
+
 function Card({ cardholderName, cardNumber, validThru, ccv, vendor }) {
   // redux
   const dispatch = useDispatch();
@@ -34,6 +36,12 @@ function Card({ cardholderName, cardNumber, validThru, ccv, vendor }) {
     return vendor === "bitcoin" ? "#222222" : "#ffffff";
   }
 
+  function handleDeleteCard(e) {
+    e.stopPropagation(); // Stop event propagation
+    console.log("delete");
+    dispatch(deleteCardFromCardStack(cardNumber));
+  }
+
   function handleCardClick() {
     const newActiveCard = {
       id: cardNumber,
@@ -58,6 +66,10 @@ function Card({ cardholderName, cardNumber, validThru, ccv, vendor }) {
       style={{ backgroundColor: getBGColor(), color: getTextColor() }}
       onClick={handleCardClick}
     >
+      <div onClick={handleDeleteCard} className="card__delete-button">
+        <img src={crossPNG} />
+      </div>
+
       <div className="card__chip-and-vendor-container">
         <img
           src={`../src/assets/chip-${

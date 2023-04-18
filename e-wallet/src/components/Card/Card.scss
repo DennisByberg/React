@@ -5,12 +5,7 @@
 
 .card {
   @include cardDefaultStyle;
-
-  background-color: orange;
-
-  // margin: -5rem 0;
-  text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
-
+  position: relative;
   &:hover {
     box-shadow: 0 0 10px black;
     cursor: pointer;
@@ -75,6 +70,27 @@
 
     :last-child {
       font-size: 18px;
+    }
+  }
+
+  &__delete-button {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 99px;
+    border: 1px solid black;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+
+    // crossIMG
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
     }
   }
 }

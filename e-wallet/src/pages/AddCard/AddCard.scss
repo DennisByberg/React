@@ -4,12 +4,10 @@
 
 .add-card {
   @include flexColumnCenter;
+  min-height: 100vh;
+  // padding: 1rem 0;
   justify-content: space-between;
   gap: 1rem;
-
-  padding: 1rem 0;
-
-  min-height: 100vh;
 
   &__description {
     @include descriptionStyle;
@@ -21,6 +19,7 @@
 
     width: 100%;
     max-width: 350px;
+    margin-bottom: 2rem;
   }
 
   &__add-card-button {
