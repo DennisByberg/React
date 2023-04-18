@@ -14,73 +14,112 @@ import { useNavigate } from "react-router-dom";
 
 function AddCard() {
   // react
-  const [cardNumber, setCardNumber] = useState("XXXX XXXX XXXX XXXX");
-  const [cardholderName, setCardholderName] = useState("FIRSTNAME LASTNAME");
-  const [validThru, setValidThru] = useState("");
   const [ccv, setCcv] = useState();
   const [vendor, setVendor] = useState();
 
-  const [validThruMM, setValidThruMM] = useState("MM");
-  const [validThruYY, setValidThruYY] = useState("YY");
+  const [validThruMM, setValidThruMM] = useState("");
+  const [validThruYY, setValidThruYY] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [cardNumberSectionOne, setCardNumberSectionOne] = useState("");
+  const [cardNumberSectionTwo, setCardNumberSectionTwo] = useState("");
+  const [cardNumberSectionThree, setCardNumberSectionThree] = useState("");
+  const [cardNumberSectionFour, setCardNumberSectionFour] = useState("");
 
   // Checks
   const [isCcvValid, setIsCcvValid] = useState(false);
   const [isVendorValid, setIsVendorValid] = useState(false);
   const [isValidThruMMValid, setIsValidThruMMValid] = useState(false);
   const [isValidThruYYValid, setIsValidThruYYValid] = useState(false);
+  const [isFirstNameValid, setIsFirstNameValid] = useState(false);
+  const [isLastNameValid, setIsLastNameValid] = useState(false);
+  const [isCardNumberSectionOneValid, setIsCardNumberSectionOneValid] =
+    useState(false);
+  const [isCardNumberSectionTwoValid, setIsCardNumberSectionTwoValid] =
+    useState(false);
+  const [isCardNumberSectionThreeValid, setIsCardNumberSectionThreeValid] =
+    useState(false);
+  const [isCardNumberSectionFourValid, setIsCardNumberSectionFourValid] =
+    useState(false);
 
   // redux
   const dispatch = useDispatch();
   //router
   const navigate = useNavigate();
 
+  // Denna funktion hanterar att lägga till ett nytt kort i kortstacken. Den kombinerar kortdetaljerna (kortnummer, kortinnehavarens namn, giltighetstid, CCV-kod och leverantör) till ett nytt kortobjekt, skickar en åtgärd för att lägga till det nya kortet i kortstacken och navigerar sedan till startsidan.
   function handleAddCard() {
+    const combinedValidThru = `${validThruMM}/${validThruYY}`;
+    const fullName = `${firstName.toUpperCase()} ${lastName.toUpperCase()}`;
+    const combinedCardNumber = `${cardNumberSectionOne} ${cardNumberSectionTwo} ${cardNumberSectionThree} ${cardNumberSectionFour}`;
+
     const newCard = {
-      id: cardNumber,
-      cardNumber: cardNumber,
-      cardholderName: cardholderName,
-      validThru: validThru,
+      id: combinedCardNumber,
+      cardNumber: combinedCardNumber,
+      cardholderName: fullName,
+      validThru: combinedValidThru,
       ccv: ccv,
       vendor: vendor,
     };
-    // dispatch(addNewCardToCardStack(newCard));
-    // navigate("/");
+
+    dispatch(addNewCardToCardStack(newCard));
+    navigate("/");
   }
+
+  const cardFormData = {
+    setCcv,
+    setVendor,
+    setIsCcvValid,
+    isCcvValid,
+    setIsVendorValid,
+    isVendorValid,
+    setValidThruMM,
+    setValidThruYY,
+    isValidThruMMValid,
+    setIsValidThruMMValid,
+    isValidThruYYValid,
+    setIsValidThruYYValid,
+    setFirstName,
+    setLastName,
+    isFirstNameValid,
+    setIsFirstNameValid,
+    isLastNameValid,
+    setIsLastNameValid,
+    setCardNumberSectionOne,
+    setCardNumberSectionTwo,
+    setCardNumberSectionThree,
+    setCardNumberSectionFour,
+    isCardNumberSectionOneValid,
+    isCardNumberSectionTwoValid,
+    isCardNumberSectionThreeValid,
+    isCardNumberSectionFourValid,
+    setIsCardNumberSectionOneValid,
+    setIsCardNumberSectionTwoValid,
+    setIsCardNumberSectionThreeValid,
+    setIsCardNumberSectionFourValid,
+  };
+
+  const newCardData = {
+    cardNumberSectionOne,
+    cardNumberSectionTwo,
+    cardNumberSectionThree,
+    cardNumberSectionFour,
+    firstName,
+    lastName,
+    validThruMM,
+    validThruYY,
+    ccv,
+    vendor,
+  };
 
   return (
     <section className="add-card">
       <Header title={"ADD A NEW BANK CARD"} />
       <div>
         <p className="add-card__description">ACTIVE CARD</p>
-        <NewCard
-          cardNumber={cardNumber}
-          cardholderName={cardholderName}
-          // validThru={validThru}
-          validThruMM={validThruMM}
-          validThruYY={validThruYY}
-          ccv={ccv}
-          vendor={vendor}
-        />
+        <NewCard {...newCardData} />
       </div>
-      <CardForm
-        setCardNumber={setCardNumber}
-        setCardholderName={setCardholderName}
-        setValidThru={setValidThru}
-        setCcv={setCcv}
-        setVendor={setVendor}
-        setIsCcvValid={setIsCcvValid}
-        isCcvValid={isCcvValid}
-        setIsVendorValid={setIsVendorValid}
-        isVendorValid={isVendorValid}
-        validThruMM={validThruMM}
-        setValidThruMM={setValidThruMM}
-        validThruYY={validThruYY}
-        setValidThruYY={setValidThruYY}
-        isValidThruMMValid={isValidThruMMValid}
-        setIsValidThruMMValid={setIsValidThruMMValid}
-        isValidThruYYValid={isValidThruYYValid}
-        setIsValidThruYYValid={setIsValidThruYYValid}
-      />
+      <CardForm {...cardFormData} />
       <div className="add-card__buttons">
         <button
           onClick={() => {

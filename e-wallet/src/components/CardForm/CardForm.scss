@@ -15,7 +15,7 @@
     padding: 1rem;
     border: 1px solid hsla(0, 0%, 0%, 0.815);
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
     outline: none;
     box-shadow: 1px 1px 1px black;
 
@@ -49,23 +49,67 @@
     flex-direction: column;
   }
 
+  &__cardholder-inputs-container {
+    // border: 1px solid black;
+    display: flex;
+
+    :nth-child(1) {
+      width: 50%;
+      border-right: none;
+      border-radius: 8px 0px 0px 8px;
+      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+    }
+    :nth-child(2) {
+      width: 50%;
+      border-left: none;
+      border-radius: 0px 8px 8px 0px;
+    }
+  }
+
   // INPUTS
+
+  &__card-numbers-inputs-container {
+    display: flex;
+
+    :nth-child(1) {
+      width: 25%;
+      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-radius: 8px 0px 0px 8px;
+    }
+    :nth-child(2) {
+      width: 25%;
+      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-left: none;
+      border-radius: 0px;
+    }
+    :nth-child(3) {
+      width: 25%;
+      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-left: none;
+      border-radius: 0px;
+    }
+    :nth-child(4) {
+      width: 25%;
+      border-left: none;
+
+      border-radius: 0px 8px 8px 0px;
+    }
+  }
+
   &__valid-inputs-container {
     width: 100%;
     // MM
     :nth-child(1) {
       width: 30%;
-      border: none;
-      border-left: 2px solid black;
-      box-shadow: 0 0 0;
+      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-radius: 8px 0px 0px 8px;
     }
 
     // YY
     :nth-child(2) {
       width: 30%;
-      border: none;
-      border-right: 2px solid black;
-      box-shadow: 0 0 0;
+      border-left: none;
+      border-radius: 0px 8px 8px 0px;
     }
   }
 

@@ -30,6 +30,11 @@
     }
   }
 
+  &__card-number-sections-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__cart-number {
     text-align: center;
     font-size: 22px;
@@ -39,27 +44,29 @@
   &__card-holder-name-and-valid-thru-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__valid-thru-mm-and-yy-container {
     display: flex;
+    font-size: 16px;
+  }
 
-    :nth-child(1) {
-      font-size: 18px;
-    }
-    :nth-child(2) {
-      font-size: 18px;
-    }
+  &__firstname-and-lastname-container {
+    display: flex;
+    font-size: 16px;
+    gap: 0.4rem;
   }
 
   &__cardholder-name-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.1rem;
+  }
 
-    :nth-child(1) {
-      font-size: 12px;
-    }
+  &__cardholder-name {
+    font-size: 12px;
   }
 
   &__valid-thru-txt {
@@ -71,6 +78,8 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+    font-size: 16px;
+    gap: 0.1rem;
   }
 }
 

@@ -1,13 +1,15 @@
 import "./NewCard.scss";
 
 function NewCard({
-  cardNumber,
-  cardholderName,
-  validThru,
-  ccv,
   vendor,
   validThruYY,
   validThruMM,
+  firstName,
+  lastName,
+  cardNumberSectionOne,
+  cardNumberSectionTwo,
+  cardNumberSectionThree,
+  cardNumberSectionFour,
 }) {
   function getBGColorOnNewCard() {
     switch (vendor) {
@@ -48,22 +50,43 @@ function NewCard({
         <img src={`../src/assets/vendor-${vendor ? vendor : "bitcoin"}.svg `} />
       </div>
 
-      <p className="new-card__cart-number">{cardNumber}</p>
+      <div className="new-card__card-number-sections-container">
+        <p className="new-card__cart-number">
+          {cardNumberSectionOne ? cardNumberSectionOne : "XXXX"}
+        </p>
+        <p className="new-card__cart-number">
+          {cardNumberSectionTwo ? cardNumberSectionTwo : "XXXX"}
+        </p>
+        <p className="new-card__cart-number">
+          {cardNumberSectionThree ? cardNumberSectionThree : "XXXX"}
+        </p>
+        <p className="new-card__cart-number">
+          {cardNumberSectionFour ? cardNumberSectionFour : "XXXX"}
+        </p>
+      </div>
 
       <div
         style={{ color: getTextColor() }}
         className="new-card__card-holder-name-and-valid-thru-container"
       >
         <div className="new-card__cardholder-name-container">
-          <p>CARDHOLDER NAME</p>
-          <p className="text-shadow">{cardholderName}</p>
+          <p className="new-card__cardholder-name">CARDHOLDER NAME</p>
+          <div className="new-card__firstname-and-lastname-container">
+            <p className="text-shadow">
+              {firstName ? firstName.toUpperCase() : "FIRSTNAME"}
+            </p>
+
+            <p className="text-shadow">
+              {lastName ? lastName.toUpperCase() : "LASTNAME"}
+            </p>
+          </div>
         </div>
 
         <div className="new-card__valid-thru-container">
           <p className="new-card__valid-thru-txt">VALID THRU</p>
           <div className="new-card__valid-thru-mm-and-yy-container">
-            <p className="text-shadow">{validThruMM}</p>/
-            <p className="text-shadow"> {validThruYY}</p>
+            <p className="text-shadow">{validThruMM ? validThruMM : "MM"}</p>/
+            <p className="text-shadow">{validThruYY ? validThruYY : "YY"}</p>
           </div>
         </div>
       </div>
