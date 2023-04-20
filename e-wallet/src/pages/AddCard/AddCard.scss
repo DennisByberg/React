@@ -5,7 +5,6 @@
 .add-card {
   @include flexColumnCenter;
   min-height: 100vh;
-  // padding: 1rem 0;
   justify-content: space-between;
   gap: 1rem;
 
@@ -16,9 +15,7 @@
   &__buttons {
     @include flexColumnCenter;
     gap: 1rem;
-
     width: 100%;
-    max-width: 350px;
     margin-bottom: 2rem;
   }
 

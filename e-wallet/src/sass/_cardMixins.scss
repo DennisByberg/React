@@ -12,3 +12,8 @@
   padding: 1.5rem;
   text-shadow: -1px 0 0 rgba(141, 141, 141, 0.548);
 }
+
+@mixin cardHoverStyle {
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+}

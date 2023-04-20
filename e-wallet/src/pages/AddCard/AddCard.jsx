@@ -6,17 +6,15 @@ import NewCard from "../../components/NewCard/NewCard";
 import CardForm from "../../components/CardForm/CardForm";
 // react
 import { useState } from "react";
-//redux
+// redux
 import { useDispatch } from "react-redux";
 import { addNewCardToCardStack } from "../../redux/cards";
 // router
 import { useNavigate } from "react-router-dom";
 
 function AddCard() {
-  // react
   const [ccv, setCcv] = useState();
   const [vendor, setVendor] = useState();
-
   const [validThruMM, setValidThruMM] = useState("");
   const [validThruYY, setValidThruYY] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -25,8 +23,7 @@ function AddCard() {
   const [cardNumberSectionTwo, setCardNumberSectionTwo] = useState("");
   const [cardNumberSectionThree, setCardNumberSectionThree] = useState("");
   const [cardNumberSectionFour, setCardNumberSectionFour] = useState("");
-
-  // Checks
+  // checks
   const [isCcvValid, setIsCcvValid] = useState(false);
   const [isVendorValid, setIsVendorValid] = useState(false);
   const [isValidThruMMValid, setIsValidThruMMValid] = useState(false);
@@ -42,10 +39,8 @@ function AddCard() {
   const [isCardNumberSectionFourValid, setIsCardNumberSectionFourValid] =
     useState(false);
 
-  // redux
-  const dispatch = useDispatch();
-  //router
-  const navigate = useNavigate();
+  const dispatch = useDispatch(); // redux.
+  const navigate = useNavigate(); // router.
 
   // Denna funktion hanterar att lägga till ett nytt kort i kortstacken. Den kombinerar kortdetaljerna (kortnummer, kortinnehavarens namn, giltighetstid, CCV-kod och leverantör) till ett nytt kortobjekt, skickar en åtgärd för att lägga till det nya kortet i kortstacken och navigerar sedan till startsidan.
   function handleAddCard() {

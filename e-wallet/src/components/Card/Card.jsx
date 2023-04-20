@@ -11,10 +11,10 @@ import {
 import crossPNG from "../../assets/cross.png";
 
 function Card({ cardholderName, cardNumber, validThru, ccv, vendor }) {
-  // redux
   const dispatch = useDispatch();
   const { activeCard } = useSelector((state) => state.cards);
 
+  // returnerar en bakgrundsfärg baserat på vilken kortleverantör som är aktiv.
   function getBGColor() {
     switch (vendor) {
       case "bitcoin":
@@ -25,23 +25,24 @@ function Card({ cardholderName, cardNumber, validThru, ccv, vendor }) {
         return "#8b58f9";
       case "ninja":
         return "#222222";
-
-      //if something goes wrong...
+      // om något går fel:
       default:
         break;
     }
   }
 
+  // returnerar en textfärg baserat på vilken kortleverantör som är aktiv.
   function getTextColor() {
     return vendor === "bitcoin" ? "#222222" : "#ffffff";
   }
 
+  // hanterar borttagning av kort från Card-Stack.
   function handleDeleteCard(e) {
-    e.stopPropagation(); // Stop event propagation
-    console.log("delete");
+    e.stopPropagation();
     dispatch(deleteCardFromCardStack(cardNumber));
   }
 
+  // definierar ett nytt aktivt kort-objekt med egenskaperna id, kortnummer, kortinnehavarens namn, giltighetstid, ccv och kortleverantör.
   function handleCardClick() {
     const newActiveCard = {
       id: cardNumber,

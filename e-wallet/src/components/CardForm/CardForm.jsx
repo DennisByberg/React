@@ -1,92 +1,70 @@
 // sass
 import "./CardForm.scss";
 
-const Form = ({
-  setCcv,
-  setVendor,
-  isCcvValid,
-  setIsCcvValid,
-  setIsVendorValid,
-  isVendorValid,
-  setValidThruMM,
-  setValidThruYY,
-  setIsValidThruMMValid,
-  setIsValidThruYYValid,
-  isValidThruYYValid,
-  isValidThruMMValid,
-  setFirstName,
-  setLastName,
-  isFirstNameValid,
-  setIsFirstNameValid,
-  isLastNameValid,
-  setIsLastNameValid,
-  setCardNumberSectionOne,
-  setCardNumberSectionTwo,
-  setCardNumberSectionThree,
-  setCardNumberSectionFour,
-  isCardNumberSectionOneValid,
-  setIsCardNumberSectionOneValid,
-  isCardNumberSectionTwoValid,
-  setIsCardNumberSectionTwoValid,
-  isCardNumberSectionThreeValid,
-  setIsCardNumberSectionThreeValid,
-  isCardNumberSectionFourValid,
-  setIsCardNumberSectionFourValid,
-}) => {
+const Form = (cardFormData) => {
   // HANDLES
   function handleCCV(e) {
-    setIsCcvValid(validateCcv(e.target.value));
-    setCcv(e.target.value);
+    cardFormData.setIsCcvValid(validateCcv(e.target.value));
+    cardFormData.setCcv(e.target.value);
   }
 
   function handleVendor(e) {
-    setIsVendorValid(validateVendor(e.target.value));
-    setVendor(e.target.value);
+    cardFormData.setIsVendorValid(validateVendor(e.target.value));
+    cardFormData.setVendor(e.target.value);
   }
 
   function handleValidThruMM(e) {
-    setIsValidThruMMValid(validateValidThru(e.target.value));
-    setValidThruMM(e.target.value);
+    cardFormData.setIsValidThruMMValid(validateValidThru(e.target.value));
+    cardFormData.setValidThruMM(e.target.value);
   }
 
   function handleValidThruYY(e) {
-    setIsValidThruYYValid(validateValidThru(e.target.value));
-    setValidThruYY(e.target.value);
+    cardFormData.setIsValidThruYYValid(validateValidThru(e.target.value));
+    cardFormData.setValidThruYY(e.target.value);
   }
 
   function handleFirstName(e) {
-    setIsFirstNameValid(validateName(e.target.value));
-    setFirstName(e.target.value);
+    cardFormData.setIsFirstNameValid(validateName(e.target.value));
+    cardFormData.setFirstName(e.target.value);
   }
 
   function handleLastName(e) {
-    setIsLastNameValid(validateName(e.target.value));
-    setLastName(e.target.value);
+    cardFormData.setIsLastNameValid(validateName(e.target.value));
+    cardFormData.setLastName(e.target.value);
   }
 
   function handleCardNumberSectionOne(e) {
-    setIsCardNumberSectionOneValid(validateCardNumber(e.target.value));
-    setCardNumberSectionOne(e.target.value);
+    cardFormData.setIsCardNumberSectionOneValid(
+      validateCardNumber(e.target.value)
+    );
+    cardFormData.setCardNumberSectionOne(e.target.value);
   }
   function handleCardNumberSectionTwo(e) {
-    setIsCardNumberSectionTwoValid(validateCardNumber(e.target.value));
-    setCardNumberSectionTwo(e.target.value);
+    cardFormData.setIsCardNumberSectionTwoValid(
+      validateCardNumber(e.target.value)
+    );
+    cardFormData.setCardNumberSectionTwo(e.target.value);
   }
   function handleCardNumberSectionThree(e) {
-    setIsCardNumberSectionThreeValid(validateCardNumber(e.target.value));
-    setCardNumberSectionThree(e.target.value);
+    cardFormData.setIsCardNumberSectionThreeValid(
+      validateCardNumber(e.target.value)
+    );
+    cardFormData.setCardNumberSectionThree(e.target.value);
   }
+
   function handleCardNumberSectionFour(e) {
-    setIsCardNumberSectionFourValid(validateCardNumber(e.target.value));
-    setCardNumberSectionFour(e.target.value);
+    cardFormData.setIsCardNumberSectionFourValid(
+      validateCardNumber(e.target.value)
+    );
+    cardFormData.setCardNumberSectionFour(e.target.value);
   }
 
   // VALIDATES
-  function validateCcv(ccv) {
+  function validateCcv(ccvString) {
     // Check if ccv is a 3-digit number...
-    if (ccv.length === 3 && !isNaN(ccv)) {
+    if (ccvString.length === 3 && !isNaN(ccvString)) {
       // Parse ccv to an integer
-      const ccvNumber = parseInt(ccv, 10);
+      const ccvNumber = parseInt(ccvString, 10);
       // Check if ccvNumber is within the range of 0 to 999
       if (ccvNumber >= 0 && ccvNumber <= 999) {
         return true;
@@ -100,11 +78,11 @@ const Form = ({
   }
 
   function validateValidThru(MMorYY) {
-    // Check if ccv is a 2-digit number...
+    // Check if valid-thru is a 2-digit number...
     if (MMorYY.length === 2 && !isNaN(MMorYY)) {
       // Parse ccv to an integer
       const MMorYYNumber = parseInt(MMorYY);
-      // Check if ccvNumber is within the range of 0 to 999
+      // Check if ccvNumber is within the range of 0 to 99
       if (MMorYYNumber >= 0 && MMorYYNumber <= 99) {
         return true;
       }
@@ -120,10 +98,9 @@ const Form = ({
 
     // Convert the name parameter to lowercase
     name = name.toLowerCase();
-    // Define an array of valid characters, including Swedish letters A to Ö
-    var validChars = "abcdefghijklmnopqrstuvwxyzåäö";
+    const validChars = "abcdefghijklmnopqrstuvwxyzåäö";
     // Loop through each character in the name parameter
-    for (var i = 0; i < name.length; i++) {
+    for (let i = 0; i < name.length; i++) {
       // If the character is not in the validChars array, return false
       if (validChars.indexOf(name.charAt(i)) === -1) {
         return false;
@@ -154,7 +131,9 @@ const Form = ({
         <div className="form__card-numbers-inputs-container">
           <input
             className={`form__input ${
-              isCardNumberSectionOneValid ? "form__input--success" : ""
+              cardFormData.isCardNumberSectionOneValid
+                ? "form__input--success"
+                : ""
             }`}
             placeholder="1234"
             type="text"
@@ -163,7 +142,9 @@ const Form = ({
           />
           <input
             className={`form__input ${
-              isCardNumberSectionTwoValid ? "form__input--success" : ""
+              cardFormData.isCardNumberSectionTwoValid
+                ? "form__input--success"
+                : ""
             }`}
             placeholder="1234"
             type="text"
@@ -172,7 +153,9 @@ const Form = ({
           />
           <input
             className={`form__input ${
-              isCardNumberSectionThreeValid ? "form__input--success" : ""
+              cardFormData.isCardNumberSectionThreeValid
+                ? "form__input--success"
+                : ""
             }`}
             placeholder="1234"
             type="text"
@@ -181,7 +164,9 @@ const Form = ({
           />
           <input
             className={`form__input ${
-              isCardNumberSectionFourValid ? "form__input--success" : ""
+              cardFormData.isCardNumberSectionFourValid
+                ? "form__input--success"
+                : ""
             }`}
             placeholder="1234"
             type="text"
@@ -198,7 +183,7 @@ const Form = ({
           {/* FIRSTNAME */}
           <input
             className={`form__input ${
-              isFirstNameValid ? "form__input--success" : ""
+              cardFormData.isFirstNameValid ? "form__input--success" : ""
             }`}
             placeholder="FIRSTNAME"
             type="text"
@@ -208,7 +193,7 @@ const Form = ({
           {/* LASTNAME */}
           <input
             className={`form__input ${
-              isLastNameValid ? "form__input--success" : ""
+              cardFormData.isLastNameValid ? "form__input--success" : ""
             }`}
             placeholder="LASTNAME"
             type="text"
@@ -227,7 +212,7 @@ const Form = ({
             {/* MM */}
             <input
               className={`form__input ${
-                isValidThruMMValid ? "form__input--success" : ""
+                cardFormData.isValidThruMMValid ? "form__input--success" : ""
               }`}
               placeholder="MM"
               type="text"
@@ -237,7 +222,7 @@ const Form = ({
             {/* YY */}
             <input
               className={`form__input ${
-                isValidThruYYValid ? "form__input--success" : ""
+                cardFormData.isValidThruYYValid ? "form__input--success" : ""
               }`}
               placeholder="YY"
               type="text"
@@ -252,7 +237,7 @@ const Form = ({
           <label className="form__label">CCV</label>
           <input
             className={`form__input ${
-              isCcvValid ? "form__input--success" : ""
+              cardFormData.isCcvValid ? "form__input--success" : ""
             }`}
             placeholder="e.g. 999"
             type="text"
@@ -267,7 +252,7 @@ const Form = ({
         <label className="form__label">VENDOR</label>
         <select
           className={`form__select ${
-            isVendorValid ? "form__select--success" : ""
+            cardFormData.isVendorValid ? "form__select--success" : ""
           }`}
           onChange={handleVendor}
         >

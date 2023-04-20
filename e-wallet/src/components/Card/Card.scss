@@ -6,9 +6,9 @@
 .card {
   @include cardDefaultStyle;
   position: relative;
+
   &:hover {
-    box-shadow: 0 0 10px black;
-    cursor: pointer;
+    @include cardHoverStyle;
   }
 
   &:not(:last-child) {

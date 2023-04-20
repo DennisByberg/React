@@ -23,7 +23,11 @@ function CardStack() {
 
   return (
     <section className="card-stack">
-      <ul className="card-stack__ul">{cardsComponents}</ul>
+      {cards.length ? (
+        <ul className="card-stack__ul">{cardsComponents}</ul>
+      ) : (
+        <h3>NO CARDS IN CARDSTACK</h3>
+      )}
     </section>
   );
 }

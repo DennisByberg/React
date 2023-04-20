@@ -3,7 +3,7 @@ import "./App.scss";
 // pages
 import HomePage from "./pages/HomePage/HomePage";
 import AddCard from "./pages/AddCard/AddCard";
-// react-router-dom
+// router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {

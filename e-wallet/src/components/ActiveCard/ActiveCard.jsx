@@ -7,12 +7,14 @@ import React, { useState } from "react";
 
 function ActiveCard() {
   const { activeCard } = useSelector((state) => state.cards);
+
   const [isFlipped, setIsFlipped] = useState(false);
 
   function handleCardClick() {
     setIsFlipped(!isFlipped);
   }
 
+  // returnerar en bakgrundsfärg baserat på vilken kortleverantör som är aktiv.
   function getBGColor() {
     switch (activeCard.vendor) {
       case "bitcoin":
@@ -24,12 +26,13 @@ function ActiveCard() {
       case "ninja":
         return "#222222";
 
-      //if something goes wrong...
+      // om något går fel:
       default:
         break;
     }
   }
 
+  // returnerar en textfärg baserat på vilken kortleverantör som är aktiv.
   function getTextColor() {
     return activeCard.vendor === "bitcoin" ? "#222222" : "#ffffff";
   }

@@ -8,7 +8,7 @@ import ActiveCard from "../../components/ActiveCard/ActiveCard";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // router.
 
   return (
     <section className="homepage">

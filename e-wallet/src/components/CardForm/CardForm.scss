@@ -13,7 +13,7 @@
   &__input,
   &__select {
     padding: 1rem;
-    border: 1px solid hsla(0, 0%, 0%, 0.815);
+    border: 1px solid #000000cc;
     border-radius: 8px;
     font-size: 13px;
     outline: none;
@@ -21,12 +21,12 @@
 
     &::placeholder {
       font-style: italic;
-      color: rgb(158, 158, 158);
+      color: $placeholderGrey;
     }
 
     &--success {
-      border-color: #46f546 !important; // Green border for correct input
-      box-shadow: 1px 1px 1px #46f546;
+      border-color: $successGreen !important;
+      box-shadow: 1px 1px 1px $successGreen;
     }
   }
 
@@ -57,7 +57,7 @@
       width: 50%;
       border-right: none;
       border-radius: 8px 0px 0px 8px;
-      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-right: 1px dashed #0000001a;
     }
     :nth-child(2) {
       width: 50%;
@@ -73,25 +73,24 @@
 
     :nth-child(1) {
       width: 25%;
-      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-right: 1px dashed #0000001a;
       border-radius: 8px 0px 0px 8px;
     }
     :nth-child(2) {
       width: 25%;
-      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-right: 1px dashed #0000001a;
       border-left: none;
       border-radius: 0px;
     }
     :nth-child(3) {
       width: 25%;
-      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-right: 1px dashed #0000001a;
       border-left: none;
       border-radius: 0px;
     }
     :nth-child(4) {
       width: 25%;
       border-left: none;
-
       border-radius: 0px 8px 8px 0px;
     }
   }
@@ -101,7 +100,7 @@
     // MM
     :nth-child(1) {
       width: 30%;
-      border-right: 1px dashed rgba(0, 0, 0, 0.103);
+      border-right: 1px dashed #0000001a;
       border-radius: 8px 0px 0px 8px;
     }
 
