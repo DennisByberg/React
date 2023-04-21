@@ -61,11 +61,11 @@ const Form = (cardFormData) => {
 
   // VALIDATES
   function validateCcv(ccvString) {
-    // Check if ccv is a 3-digit number...
+    // kontrollerar om ccv är ett tresiffrigt nummer...
     if (ccvString.length === 3 && !isNaN(ccvString)) {
-      // Parse ccv to an integer
+      // parsa ccv till number...
       const ccvNumber = parseInt(ccvString, 10);
-      // Check if ccvNumber is within the range of 0 to 999
+      // kontrollerar om ccvNumber är mellan 0 till 999...
       if (ccvNumber >= 0 && ccvNumber <= 999) {
         return true;
       }
@@ -78,11 +78,11 @@ const Form = (cardFormData) => {
   }
 
   function validateValidThru(MMorYY) {
-    // Check if valid-thru is a 2-digit number...
+    // kontrollerar om MMorYY är ett tvåsiffrigt nummer...
     if (MMorYY.length === 2 && !isNaN(MMorYY)) {
-      // Parse ccv to an integer
+      // parsa MMorYY till number...
       const MMorYYNumber = parseInt(MMorYY);
-      // Check if ccvNumber is within the range of 0 to 99
+      // kontrollerar om MMorYYNumber är mellan 0 till 99...
       if (MMorYYNumber >= 0 && MMorYYNumber <= 99) {
         return true;
       }
@@ -91,31 +91,31 @@ const Form = (cardFormData) => {
   }
 
   function validateName(name) {
-    // Check if the name is at least 3 characters long
+    // kontrollerar om namnet är minst 3 tecken långt...
     if (name.length < 3) {
       return false;
     }
 
-    // Convert the name parameter to lowercase
+    // konverterar namnparametern till gemener...
     name = name.toLowerCase();
     const validChars = "abcdefghijklmnopqrstuvwxyzåäö";
-    // Loop through each character in the name parameter
+    // loopar genom varje tecken i namnparametern...
     for (let i = 0; i < name.length; i++) {
-      // If the character is not in the validChars array, return false
+      // om tecknet inte finns i validChars-matrisen, returnera false...
       if (validChars.indexOf(name.charAt(i)) === -1) {
         return false;
       }
     }
-    // If all characters are valid and the name is at least 3 characters long, return true
+    // om alla tecken är giltiga och namnet är minst 3 tecken långt, returnera true...
     return true;
   }
 
   function validateCardNumber(cardNumber) {
-    // Check if cardNumber is a 4-digit number...
+    // kontrollerar om kortnummer är ett 4-siffrigt nummer...
     if (cardNumber.length === 4 && !isNaN(cardNumber)) {
-      // Parse cardNumber to an integer
+      // parsa cardNumber till ett heltal...
       const cardNumberInt = parseInt(cardNumber);
-      // Check if cardNumber is within the range of 0 to 9999
+      // kontrollerar om kortnummer är inom 0 till 9999
       if (cardNumberInt >= 0 && cardNumberInt <= 9999) {
         return true;
       }

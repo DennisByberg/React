@@ -1,7 +1,7 @@
 // redux toolkit
 import { createSlice } from "@reduxjs/toolkit";
 
-// Startkort för lata folk som inte orkar lägga till sina egna kort... (jag) :D
+// OM det är första gången man startar appen finns startkort för lata folk som inte orkar lägga till sina egna kort.. (jag) :D... annars läser den in sparade cards från local storage.
 const initialState = {
   cards: JSON.parse(localStorage.getItem("cards")) || [
     {
