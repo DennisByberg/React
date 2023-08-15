@@ -1,31 +1,13 @@
-import { useState } from "react";
 import "./App.css";
+import { getPosition, reverseGeocode } from "./geolocations";
+import { useState } from "react";
 
 function App() {
   const [message, setMessage] = useState<string>("");
-
-  // This is a function that gives you the latitude and longitude.
-  function getPosition() {
-    console.log("getPosition 1");
-    if ("geolocation" in navigator) {
-      console.log("getPosition 2");
-
-      navigator.geolocation.getCurrentPosition(
-        (position: GeolocationPosition) => {
-          console.log("position is: ", position);
-          // set message to longtidu & latitude.
-          setMessage(
-            `Your postion is: lat.${position.coords.latitude} long.${position.coords.longitude}`
-          );
-        },
-        (error) => {
-          console.log(error);
-          setMessage("Please enable postion to use this app");
-        }
-      );
-      console.log("getPosition 3");
-    }
-  }
+  const [address, setAddress] = useState<string>("");
+  // 57.7008516 long.11.955171
+  const lat = 57.7008516;
+  const lon = 11.955171;
 
   return (
     <div className="vertical-layout">
@@ -33,8 +15,14 @@ function App() {
         <h1> Geolocation </h1>
       </header>
       <main>
-        <button onClick={getPosition}> See Location </button>
+        <button onClick={() => getPosition(setMessage)}> Hitta! </button>
         <p> {message} </p>
+
+        <button onClick={() => reverseGeocode(lat, lon, setAddress)}>
+          {" "}
+          Get Address from location
+        </button>
+        <p>{address}</p>
       </main>
     </div>
   );
