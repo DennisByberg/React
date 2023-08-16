@@ -37,7 +37,8 @@ function Stops() {
     const stopsArray = data.stopLocationOrCoordLocation;
     console.log(stopsArray);
 
-    const stops = stopsArray.map((stop) => {
+    // TODO... Fixa interface så vi slipper skriva any...
+    const stops = stopsArray.map((stop: any) => {
       console.log(stop.StopLocation.name);
       console.log(stop.StopLocation.extId);
       return (
