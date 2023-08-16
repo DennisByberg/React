@@ -7,6 +7,7 @@ function StopCard({ nameOfStop, extId }) {
   async function getPoleTimeTables(extId: string) {
     console.log(extId);
     console.log(API_KEY);
+
     const URL = `https://api.resrobot.se/v2.1/departureBoard?id=${extId}&format=json&accessId=${API_KEY}`;
     const response = await fetch(URL);
 
