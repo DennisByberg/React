@@ -1,4 +1,5 @@
 @import "./sass/colors";
+@import "./sass/fonts";
 
 * {
   margin: 0;
@@ -10,4 +11,14 @@
 .App {
   background-color: $darkGrey;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__header {
+    @include fontFamilyWaitingForTheSunrise;
+    font-weight: bold;
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
 }

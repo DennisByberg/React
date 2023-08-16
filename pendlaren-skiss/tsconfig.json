@@ -18,7 +18,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noImplicitReturns": true, // LAGT TILL!
+    "allowUnreachableCode": false, // LAGT TILL!
     "noFallthroughCasesInSwitch": true
+    /* X */
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
