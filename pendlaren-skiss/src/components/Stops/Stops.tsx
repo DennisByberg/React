@@ -35,17 +35,19 @@ function Stops() {
     const data = await response.json();
 
     const stopsArray = data.stopLocationOrCoordLocation;
-    console.log(stopsArray);
+    // console.log(stopsArray);
 
     // TODO... Fixa interface så vi slipper skriva any...
     const stops = stopsArray.map((stop: any) => {
-      console.log(stop.StopLocation.name);
-      console.log(stop.StopLocation.extId);
+      // console.log(stop.StopLocation.name);
+      // console.log(stop.StopLocation.extId);
+      // console.log(stop.StopLocation.dist);
       return (
         <StopCard
           key={stop.StopLocation.extId}
           extId={stop.StopLocation.extId}
           nameOfStop={stop.StopLocation.name}
+          distanceFromLocation={stop.StopLocation.dist}
         />
       );
     });
