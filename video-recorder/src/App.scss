@@ -1,0 +1,24 @@
+@import "./sass/colors";
+@import "./sass/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: $darkGrey;
+  overflow: hidden;
+}
+
+.App {
+  @include fontFamilyHelvetica;
+
+  min-height: 100vh;
+  background-color: $darkGrey;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 2rem;
+}

@@ -1,0 +1,11 @@
+// No import...
+// font-family: Helvetica, sans-serif;
+@mixin fontFamilyHelvetica {
+  font-family: Helvetica, sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+// font-family: 'Bad Script', cursive;
+@mixin fontBadScript {
+  font-family: "Bad Script", cursive;
+}

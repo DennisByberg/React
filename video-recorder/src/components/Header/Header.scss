@@ -1,0 +1,34 @@
+@import "../../sass/colors";
+@import "../../sass/fonts";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    @include fontBadScript;
+    border-bottom: 2px solid rgb(255, 102, 140);
+    font-size: 3rem;
+    color: $pink;
+    text-shadow: -1px -1px 0 rgb(137, 27, 180), 1px -1px 0 rgb(0, 0, 0),
+      -1px 1px 0 rgb(124, 122, 206), 1px 1px 0 black;
+    margin-right: -1.5rem;
+  }
+
+  img {
+    max-width: 150px;
+  }
+}
+
+////////////////////////////////////
+//        | MEDIA QUERY |         //
+///////////////////////////////////
+/*✘| SMALL / MOBILE |✘*/
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .header {
+    h1 {
+      display: none;
+    }
+  }
+}

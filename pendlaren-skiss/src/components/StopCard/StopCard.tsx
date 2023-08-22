@@ -39,7 +39,11 @@ function StopCard({ nameOfStop, extId, distanceFromLocation }: StopCardProps) {
       {departuresArray ? (
         <ul>
           {departuresArray.map((departure: destinationData) => (
-            <li key={departure.stopid}> {departure.direction} </li>
+            <li key={departure.stopid}>
+              {departure.direction}
+              {departure.time}
+              {departure.name}
+            </li>
           ))}
         </ul>
       ) : (
@@ -52,6 +56,8 @@ function StopCard({ nameOfStop, extId, distanceFromLocation }: StopCardProps) {
 interface destinationData {
   direction: string;
   stopid: string;
+  time: string;
+  name: string;
 }
 
 export default StopCard;

@@ -1,0 +1,29 @@
+.footer {
+  //   border: 1px dotted yellow;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2rem 0;
+  z-index: 2;
+
+  // QUESTION-MARK
+  &__question-mark {
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  // GITHUB
+  &__github {
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}
