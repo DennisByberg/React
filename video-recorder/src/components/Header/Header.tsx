@@ -1,6 +1,6 @@
 import "./Header.scss";
 
-function header({ title }: IHeaderProps) {
+function header({ title }: IHeaderProps): JSX.Element {
   const neonPNG = "../src/images/neon-peace.png";
 
   return (
@@ -10,4 +10,5 @@ function header({ title }: IHeaderProps) {
     </header>
   );
 }
+
 export default header;

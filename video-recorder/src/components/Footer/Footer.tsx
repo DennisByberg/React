@@ -1,13 +1,19 @@
 import "./Footer.scss";
+import Devices from "../Devices/Devices";
 
-function Footer() {
+function Footer({ toggleDevices, isDevicesSlider }: IFooterProps): JSX.Element {
   const questionMarkPNG = "../src/images/question-mark.png";
   const githubPNG = "../src/images/github.png";
   const githubLink = "https://github.com/DennisByberg";
 
   return (
     <footer className="footer">
-      <img className="footer__question-mark" src={questionMarkPNG} />
+      {isDevicesSlider ? <Devices toggleDevices={toggleDevices} /> : null}
+      <img
+        className="footer__question-mark"
+        onClick={toggleDevices}
+        src={questionMarkPNG}
+      />
 
       <a className="footer__github" target="_blank" href={githubLink}>
         <img src={githubPNG} />
